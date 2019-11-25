@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://tangme.github.io/"/>
-  <updated>2019-11-13T02:22:57.001Z</updated>
+  <updated>2019-11-25T09:14:57.331Z</updated>
   <id>https://tangme.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>建议全局安装的NPM的功能包</title>
+    <link href="https://tangme.github.io/2019/11/25/%E5%BB%BA%E8%AE%AE%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E7%9A%84NPM%E7%9A%84%E5%8A%9F%E8%83%BD%E5%8C%85/"/>
+    <id>https://tangme.github.io/2019/11/25/建议全局安装的NPM的功能包/</id>
+    <published>2019-11-25T09:00:22.000Z</published>
+    <updated>2019-11-25T09:14:57.331Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="live-server"><a href="#live-server" class="headerlink" title="live-server"></a>live-server</h1><blockquote><p>将当前目录，设置为静态服务；之后可快速的通过本机ip或localhost的http形式，访问目录</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * 默认情况下，post请求时，是不会有返回；</span><br><span class="line"> * 如须支持，请在安装 live-server的node_modules目录下</span><br><span class="line"> * 找到 live-server 目录并进入，打开 index.js</span><br><span class="line"> * 修改第 42 行，如下：</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">if (req.method !== &quot;GET&quot; &amp;&amp; req.method !== &quot;POST&quot; &amp;&amp; req.method !== &quot;HEAD&quot;) return next();</span><br></pre></td></tr></table></figure><h1 id="rimraf"><a href="#rimraf" class="headerlink" title="rimraf"></a>rimraf</h1><blockquote><p>删除指定文件或目录；相比系统自带的delete，在删除目录层级很深的情形下，rimraf速度提升不少</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;live-server&quot;&gt;&lt;a href=&quot;#live-server&quot; class=&quot;headerlink&quot; title=&quot;live-server&quot;&gt;&lt;/a&gt;live-server&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;将当前目录，设置为静态服务；之后可快速的通
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Electron</title>
