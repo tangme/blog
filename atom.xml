@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://tangme.github.io/"/>
-  <updated>2019-11-27T02:35:48.208Z</updated>
+  <updated>2019-11-28T09:02:04.279Z</updated>
   <id>https://tangme.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue与Electron成长记</title>
+    <link href="https://tangme.github.io/2019/11/28/Vue%E4%B8%8EElectron%E6%88%90%E9%95%BF%E8%AE%B0/"/>
+    <id>https://tangme.github.io/2019/11/28/Vue与Electron成长记/</id>
+    <published>2019-11-28T08:33:10.000Z</published>
+    <updated>2019-11-28T09:02:04.279Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>vue项目完成后，如果想打包为应用程序，可以使用Electron，从零开始，上手步骤如下：</p></blockquote><ul><li><a href="https://cli.vuejs.org/zh/guide/installation.html" target="_blank" rel="noopener">安装 Vue CLI</a></li><li>通过 <code>vue ui</code> 新建项目</li><li>项目安装 <code>vue-cli-plugin-electron-builder</code> 插件</li><li>进入 <code>vue ui</code> 仪表板<ul><li>进入 <code>任务</code> 菜单<ul><li>选择 <code>electron:build</code><ul><li>设置 <code>变量</code> 后，点击 <code>运行</code> 即可尝鲜打包后的桌面应用</li></ul></li></ul></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;vue项目完成后，如果想打包为应用程序，可以使用Electron，从零开始，上手步骤如下：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://cli.vuejs.org/zh/guide/installatio
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>推荐安装Chrome扩展程序</title>
@@ -53,20 +78,6 @@
         &lt;h1 id=&quot;live-server&quot;&gt;&lt;a href=&quot;#live-server&quot; class=&quot;headerlink&quot; title=&quot;live-server&quot;&gt;&lt;/a&gt;live-server&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;将当前目录，设置为静态服务；之后可快速的通
       
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Electron</title>
-    <link href="https://tangme.github.io/2019/11/13/Electron/"/>
-    <id>https://tangme.github.io/2019/11/13/Electron/</id>
-    <published>2019-11-13T02:22:56.000Z</published>
-    <updated>2019-11-13T02:22:57.001Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
