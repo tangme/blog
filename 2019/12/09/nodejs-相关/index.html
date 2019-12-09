@@ -14,24 +14,24 @@
     
     
     
-    <title>Vue与Electron成长记 | 唐小律的发呆空间 | Just do it.</title>
+    <title>nodejs 相关 | 唐小律的发呆空间 | Just do it.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="vue项目完成后，如果想打包为应用程序，可以使用Electron，从零开始，上手步骤如下：   安装 Vue CLI 通过 vue ui 新建项目 项目安装 vue-cli-plugin-electron-builder 插件 进入 vue ui 仪表板 进入 任务 菜单 选择 electron:build 设置 变量 后，点击 运行 即可尝鲜打包后的桌面应用">
+    <meta name="description" content="nvm Node Version ManagerNode 版本管理器，在开发环境下，方便让一台电脑安装不同版本的node  建议全局安装的NPM的功能包nrm NPM registry managerNPM 包源管理器，默认的https://registry.npmjs.org/包源地址，国内常常响应缓慢，可以通过nrm 切换至 taobao源，快速方便  live-server 将当前目录，设置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue与Electron成长记">
-<meta property="og:url" content="https://tangme.github.io/2019/11/28/Vue与Electron成长记/index.html">
+<meta property="og:title" content="nodejs 相关">
+<meta property="og:url" content="https://tangme.github.io/2019/12/09/nodejs-相关/index.html">
 <meta property="og:site_name" content="唐小律的发呆空间">
-<meta property="og:description" content="vue项目完成后，如果想打包为应用程序，可以使用Electron，从零开始，上手步骤如下：   安装 Vue CLI 通过 vue ui 新建项目 项目安装 vue-cli-plugin-electron-builder 插件 进入 vue ui 仪表板 进入 任务 菜单 选择 electron:build 设置 变量 后，点击 运行 即可尝鲜打包后的桌面应用">
+<meta property="og:description" content="nvm Node Version ManagerNode 版本管理器，在开发环境下，方便让一台电脑安装不同版本的node  建议全局安装的NPM的功能包nrm NPM registry managerNPM 包源管理器，默认的https://registry.npmjs.org/包源地址，国内常常响应缓慢，可以通过nrm 切换至 taobao源，快速方便  live-server 将当前目录，设置">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-28T09:02:04.279Z">
+<meta property="og:updated_time" content="2019-12-09T01:13:16.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue与Electron成长记">
-<meta name="twitter:description" content="vue项目完成后，如果想打包为应用程序，可以使用Electron，从零开始，上手步骤如下：   安装 Vue CLI 通过 vue ui 新建项目 项目安装 vue-cli-plugin-electron-builder 插件 进入 vue ui 仪表板 进入 任务 菜单 选择 electron:build 设置 变量 后，点击 运行 即可尝鲜打包后的桌面应用">
+<meta name="twitter:title" content="nodejs 相关">
+<meta name="twitter:description" content="nvm Node Version ManagerNode 版本管理器，在开发环境下，方便让一台电脑安装不同版本的node  建议全局安装的NPM的功能包nrm NPM registry managerNPM 包源管理器，默认的https://registry.npmjs.org/包源地址，国内常常响应缓慢，可以通过nrm 切换至 taobao源，快速方便  live-server 将当前目录，设置">
     
         <link rel="alternate" type="application/atom+xml" title="唐小律的发呆空间" href="/blog/atom.xml">
     
@@ -119,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Vue与Electron成长记</div>
+        <div class="flex-col header-title ellipsis">nodejs 相关</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -141,11 +141,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Vue与Electron成长记</h1>
+        <h1 class="title">nodejs 相关</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-11-28T08:33:10.000Z" itemprop="datePublished" class="page-time">
-  2019-11-28
+                <time datetime="2019-12-09T00:57:48.000Z" itemprop="datePublished" class="page-time">
+  2019-12-09
 </time>
 
 
@@ -161,14 +161,21 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#nvm"><span class="post-toc-number">1.</span> <span class="post-toc-text">nvm</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#建议全局安装的NPM的功能包"><span class="post-toc-number">2.</span> <span class="post-toc-text">建议全局安装的NPM的功能包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nrm"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">nrm</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#live-server"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">live-server</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rimraf"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">rimraf</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-Vue与Electron成长记"
+
+<article id="post-nodejs-相关"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Vue与Electron成长记</h1>
+        <h1 class="post-card-title">nodejs 相关</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-11-28 16:33:10" datetime="2019-11-28T08:33:10.000Z"  itemprop="datePublished">2019-11-28</time>
+            <time class="post-time" title="2019-12-09 08:57:48" datetime="2019-12-09T00:57:48.000Z"  itemprop="datePublished">2019-12-09</time>
 
             
 
@@ -181,24 +188,19 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <blockquote>
-<p>vue项目完成后，如果想打包为应用程序，可以使用Electron，从零开始，上手步骤如下：</p>
+            <h1 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h1><blockquote>
+<p>Node Version Manager<br>Node 版本管理器，在开发环境下，方便让一台电脑安装不同版本的node</p>
 </blockquote>
-<ul>
-<li><a href="https://cli.vuejs.org/zh/guide/installation.html" target="_blank" rel="noopener">安装 Vue CLI</a></li>
-<li>通过 <code>vue ui</code> 新建项目</li>
-<li>项目安装 <code>vue-cli-plugin-electron-builder</code> 插件</li>
-<li>进入 <code>vue ui</code> 仪表板<ul>
-<li>进入 <code>任务</code> 菜单<ul>
-<li>选择 <code>electron:build</code><ul>
-<li>设置 <code>变量</code> 后，点击 <code>运行</code> 即可尝鲜打包后的桌面应用</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<h1 id="建议全局安装的NPM的功能包"><a href="#建议全局安装的NPM的功能包" class="headerlink" title="建议全局安装的NPM的功能包"></a>建议全局安装的NPM的功能包</h1><h2 id="nrm"><a href="#nrm" class="headerlink" title="nrm"></a>nrm</h2><blockquote>
+<p>NPM registry manager<br>NPM 包源管理器，默认的<code>https://registry.npmjs.org/</code>包源地址，国内常常响应缓慢，可以通过<code>nrm</code> 切换至 <code>taobao</code>源，快速方便</p>
+</blockquote>
+<h2 id="live-server"><a href="#live-server" class="headerlink" title="live-server"></a>live-server</h2><blockquote>
+<p>将当前目录，设置为静态服务；之后可快速的通过本机ip或localhost的http形式，访问目录</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * 默认情况下，post请求时，是不会有返回；</span><br><span class="line"> * 如须支持，请在安装 live-server的node_modules目录下</span><br><span class="line"> * 找到 live-server 目录并进入，打开 index.js</span><br><span class="line"> * 修改第 42 行，如下：</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">if (req.method !== &quot;GET&quot; &amp;&amp; req.method !== &quot;POST&quot; &amp;&amp; req.method !== &quot;HEAD&quot;) return next();</span><br></pre></td></tr></table></figure>
+<h2 id="rimraf"><a href="#rimraf" class="headerlink" title="rimraf"></a>rimraf</h2><blockquote>
+<p>删除指定文件或目录；相比系统自带的delete，在删除目录层级很深的情形下，rimraf速度提升不少</p>
+</blockquote>
 
         </div>
 
@@ -207,12 +209,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-28T09:02:04.279Z" itemprop="dateUpdated">2019-11-28 17:02:04</time>
+    最后更新时间：<time datetime="2019-12-09T01:13:16.273Z" itemprop="dateUpdated">2019-12-09 09:13:16</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/11/28/Vue与Electron成长记/" target="_blank" rel="external">https://tangme.github.io/2019/11/28/Vue与Electron成长记/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/12/09/nodejs-相关/" target="_blank" rel="external">https://tangme.github.io/2019/12/09/nodejs-相关/</a>
         
     </div>
     
@@ -241,7 +243,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tangme.github.io/2019/11/28/Vue与Electron成长记/&title=《Vue与Electron成长记》 — 唐小律的发呆空间&pic=https://tangme.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tangme.github.io/2019/12/09/nodejs-相关/&title=《nodejs 相关》 — 唐小律的发呆空间&pic=https://tangme.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -251,22 +253,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tangme.github.io/2019/11/28/Vue与Electron成长记/&title=《Vue与Electron成长记》 — 唐小律的发呆空间&source=something like." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tangme.github.io/2019/12/09/nodejs-相关/&title=《nodejs 相关》 — 唐小律的发呆空间&source=something like." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tangme.github.io/2019/11/28/Vue与Electron成长记/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tangme.github.io/2019/12/09/nodejs-相关/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue与Electron成长记》 — 唐小律的发呆空间&url=https://tangme.github.io/2019/11/28/Vue与Electron成长记/&via=https://tangme.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nodejs 相关》 — 唐小律的发呆空间&url=https://tangme.github.io/2019/12/09/nodejs-相关/&via=https://tangme.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tangme.github.io/2019/11/28/Vue与Electron成长记/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tangme.github.io/2019/12/09/nodejs-相关/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -286,21 +288,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/blog/2019/12/09/nodejs-相关/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">nodejs 相关</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/2019/11/26/推荐安装Chrome扩展程序/" id="post-next" class="post-nav-link">
+      <a href="/blog/2019/11/28/Vue与Electron成长记/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">推荐安装Chrome扩展程序</h4>
+        <h4 class="title">Vue与Electron成长记</h4>
       </a>
     </div>
   
@@ -397,7 +392,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tangme.github.io/2019/11/28/Vue与Electron成长记/&title=《Vue与Electron成长记》 — 唐小律的发呆空间&pic=https://tangme.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tangme.github.io/2019/12/09/nodejs-相关/&title=《nodejs 相关》 — 唐小律的发呆空间&pic=https://tangme.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -407,22 +402,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tangme.github.io/2019/11/28/Vue与Electron成长记/&title=《Vue与Electron成长记》 — 唐小律的发呆空间&source=something like." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tangme.github.io/2019/12/09/nodejs-相关/&title=《nodejs 相关》 — 唐小律的发呆空间&source=something like." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tangme.github.io/2019/11/28/Vue与Electron成长记/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tangme.github.io/2019/12/09/nodejs-相关/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue与Electron成长记》 — 唐小律的发呆空间&url=https://tangme.github.io/2019/11/28/Vue与Electron成长记/&via=https://tangme.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nodejs 相关》 — 唐小律的发呆空间&url=https://tangme.github.io/2019/12/09/nodejs-相关/&via=https://tangme.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tangme.github.io/2019/11/28/Vue与Electron成长记/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tangme.github.io/2019/12/09/nodejs-相关/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -433,7 +428,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOElEQVR42u3awY6DMAxF0f7/TzPbjlDDfU5QS3xZIZpCDgvLxn698HGcjvP1Tyvff31f8+n8vH7ZIUOGjMcyjuHBtzu+/3ij5LkXT5QhQ0YDBnn8eD1fmTLIHWTIkCGjdk6urHoRMmTIkMGTwvEmxpgvBFwZMmQ8ikGK2PGGyNew8d3IK1tQi8uQIeOBjJlN3H1+S39DhgwZj2Ic4XFHcVvbyb/7yJAhY2sGD3C11iZpZI5Xkv3IkCGjD2NVKExL3PQVxG9ahgwZmzJqn7TSVkFtEC0IuDJkyNiakY5qpengTPCdyl5lyJDxQEZaWNZGJWqvhuxZhgwZHRgzY14kdPJEMGXLkCGjD2OqaCwVorV2wkWYliFDRgPGqmZAmm7Op6QyZMjoxkjbjbVWJU80CfsVp8EyZMh4HoP/gW8ibYWSwhghZciQ0YBRG7bgpS9PKMmVxTMjMmTI+GEGf/yqYJqyUaoqQ4aMNgweRtM0LihEcXH7MeDKkCFjO0baaOSf2MiLSJ91EY5lyJDRgMHDaC2943coXpEhQ0YDBi9ZyYbIyBdvRaB7ypAhowGj1jisNRU4LPiXDBkyNmUc4ZGWozNN0OC5MmTI2JpRC3bpiNjM4AUvg2XIkLE3Iw2ypAHJS9mgSTlOXmXIkNGAURt6mA+4adp3MWwhQ4YMGZgx/9GNB2gZMmTI4E0C/hGNrCSjHosDrgwZMn6ewYcb0oQvLUf5mJoMGTL6MHjpyNfU1qclrgwZMhow/gCKXGC+2FG+nAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aQW7DMAwEwP7/0+4D0ji7lFPA8uhUtE6kSQCWFPnzE6/jZb3+NXny/JnzV12wMDAwbss4Ttf5BvmWR7nys2FgYDyH8W7j2XGTd07CdHI2DAwMjHfPnG+ZHzH5DQYGBkbLSArUHJ/shYGBgZEXkyuJY3KV9k+1OAYGxg0ZK6Xpt3/+Sn8DAwPjVozZZX0eTNsm5TFaGBgYezNmiV0+eNEecSnRxMDA2Jpxfoh85GJlOOyqkQ4MDIz9GG2waxuQbasgb2e+zXAxMDC2Y8xSujZYz4Ythg0ADAyMrRmzxsAsaLYt0qVsFwMDYztGO+iQh8UW2YZ7DAyMvRlXJW1t8yAJskVQxsDAeABjNgSWpHrtgEV+EgwMjCcwku3zFLAdwmgv7z58DxgYGJsyVkYf8gu4lYu8+iPAwMDYmtE2AFaGM2bhuPgHgIGBsREjuXZvS9BZszMPvh/uCzEwMB7DWBkCy5PO2VDFH2fGwMDYmtE2INvtVwrgti2KgYGxN2Plaiwf22rbnO15MDAwnsPIQ2R+QZZ/TElN+haJgYHxAEbRIIyfmQXfnFdMt2FgYNyWcZQrKVavShkLKgYGxtaM/wyRs5ZDXvRiYGDszWhbAnnBee171tdtGBgY2zHawJcE0xlvdhmHgYGBcW27cVbcRhU5BgYGRtlizBufK4NiGBgYz2EkBWebFLYBeuVJDAyMvRl56dgG3DyIn+d4lzU1MTAw7sf4BUpCS6lSOT1dAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
