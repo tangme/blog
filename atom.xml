@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://tangme.github.io/"/>
-  <updated>2019-12-09T01:13:16.273Z</updated>
+  <updated>2020-09-16T03:06:35.420Z</updated>
   <id>https://tangme.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的效率软件</title>
+    <link href="https://tangme.github.io/2020/09/16/%E6%88%91%E7%9A%84%E6%95%88%E7%8E%87%E8%BD%AF%E4%BB%B6/"/>
+    <id>https://tangme.github.io/2020/09/16/我的效率软件/</id>
+    <published>2020-09-16T02:53:44.000Z</published>
+    <updated>2020-09-16T03:06:35.420Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Windows-OS"><a href="#Windows-OS" class="headerlink" title="Windows OS"></a>Windows OS</h1><h3 id="Wox"><a href="#Wox" class="headerlink" title="Wox"></a><a href="http://www.wox.one/" target="_blank" rel="noopener">Wox</a></h3><p>快速搜索，类似mac的 spotlight</p><h3 id="Everything"><a href="#Everything" class="headerlink" title="Everything"></a><a href="https://www.voidtools.com" target="_blank" rel="noopener">Everything</a></h3><p>文件搜索，配合 Wow 使用</p><h3 id="QuickLook"><a href="#QuickLook" class="headerlink" title="QuickLook"></a><a href="https://github.com/QL-Win/QuickLook" target="_blank" rel="noopener">QuickLook</a></h3><p>空格键后，快速预览工具</p><h3 id="Riot"><a href="#Riot" class="headerlink" title="Riot"></a><a href="https://riot-optimizer.com/" target="_blank" rel="noopener">Riot</a></h3><p>图片压缩</p><h3 id="Peacock-Color-Picker"><a href="#Peacock-Color-Picker" class="headerlink" title="Peacock Color Picker"></a><a href="https://peacock-color-picker.en.softonic.com/download" target="_blank" rel="noopener">Peacock Color Picker</a></h3><p>屏幕拾色软件</p><h3 id="Snipaste"><a href="#Snipaste" class="headerlink" title="Snipaste"></a><a href="https://www.snipaste.com/" target="_blank" rel="noopener">Snipaste</a></h3><p>屏幕截图，亦拾色</p><h3 id="ScreenToGif"><a href="#ScreenToGif" class="headerlink" title="ScreenToGif"></a><a href="https://www.screentogif.com/" target="_blank" rel="noopener">ScreenToGif</a></h3><p>录制屏幕生成gif</p><h3 id="iConvert-Icons"><a href="#iConvert-Icons" class="headerlink" title="iConvert Icons"></a><a href="https://iconverticons.com/" target="_blank" rel="noopener">iConvert Icons</a></h3><p>给app生成ico图片</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Windows-OS&quot;&gt;&lt;a href=&quot;#Windows-OS&quot; class=&quot;headerlink&quot; title=&quot;Windows OS&quot;&gt;&lt;/a&gt;Windows OS&lt;/h1&gt;&lt;h3 id=&quot;Wox&quot;&gt;&lt;a href=&quot;#Wox&quot; class=&quot;header
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>nodejs 相关</title>
