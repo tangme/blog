@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://tangme.github.io/"/>
-  <updated>2021-02-18T07:26:03.686Z</updated>
+  <updated>2021-02-18T08:05:37.411Z</updated>
   <id>https://tangme.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS图片分析开源包</title>
+    <link href="https://tangme.github.io/2021/02/18/JS%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E5%8C%85/"/>
+    <id>https://tangme.github.io/2021/02/18/JS图片分析开源包/</id>
+    <published>2021-02-18T07:59:10.000Z</published>
+    <updated>2021-02-18T08:05:37.411Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="face-api-js"><a href="#face-api-js" class="headerlink" title="face-api.js"></a><a href="https://github.com/justadudewhohacks/face-api.js" target="_blank" rel="noopener">face-api.js</a></h1><p>人像识别</p><h1 id="tesseract-js"><a href="#tesseract-js" class="headerlink" title="tesseract.js"></a><a href="https://github.com/naptha/tesseract.js" target="_blank" rel="noopener">tesseract.js</a></h1><p>OCR 识别</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;face-api-js&quot;&gt;&lt;a href=&quot;#face-api-js&quot; class=&quot;headerlink&quot; title=&quot;face-api.js&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/justadudewhohacks/face-ap
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>我的效率软件</title>
