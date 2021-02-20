@@ -1,194 +1,233 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
 <head>
-    
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/favicon.png">
+  <link rel="icon" type="image/png" href="/blog/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="something like.">
+  <meta name="author" content="唐小律">
+  <meta name="keywords" content="">
+  <title>nodejs 相关 - 唐小律的发呆空间</title>
 
-    
-
-    
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
 
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/blog/lib/hint/hint.min.css" />
 
-    <meta charset="utf-8">
+  
     
     
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
     
-    
-    <title>nodejs 相关 | 唐小律的发呆空间 | Just do it.</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="">
-    <meta name="description" content="nvm Node Version ManagerNode 版本管理器，在开发环境下，方便让一台电脑安装不同版本的node  建议全局安装的NPM的功能包nrm NPM registry managerNPM 包源管理器，默认的https://registry.npmjs.org/包源地址，国内常常响应缓慢，可以通过nrm 切换至 taobao源，快速方便  live-server 将当前目录，设置">
-<meta property="og:type" content="article">
-<meta property="og:title" content="nodejs 相关">
-<meta property="og:url" content="https://tangme.github.io/2019/12/09/nodejs-相关/index.html">
-<meta property="og:site_name" content="唐小律的发呆空间">
-<meta property="og:description" content="nvm Node Version ManagerNode 版本管理器，在开发环境下，方便让一台电脑安装不同版本的node  建议全局安装的NPM的功能包nrm NPM registry managerNPM 包源管理器，默认的https://registry.npmjs.org/包源地址，国内常常响应缓慢，可以通过nrm 切换至 taobao源，快速方便  live-server 将当前目录，设置">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-09T01:13:16.273Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs 相关">
-<meta name="twitter:description" content="nvm Node Version ManagerNode 版本管理器，在开发环境下，方便让一台电脑安装不同版本的node  建议全局安装的NPM的功能包nrm NPM registry managerNPM 包源管理器，默认的https://registry.npmjs.org/包源地址，国内常常响应缓慢，可以通过nrm 切换至 taobao源，快速方便  live-server 将当前目录，设置">
-    
-        <link rel="alternate" type="application/atom+xml" title="唐小律的发呆空间" href="/blog/atom.xml">
-    
-    <link rel="shortcut icon" href="/blog/img/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
-    <script>window.lazyScripts=[]</script>
+  
 
-    <!-- custom head -->
-    
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
-</head>
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"tangme.github.io","root":"/blog/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
 
 <body>
-    <div id="loading" class="active"></div>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/blog/">&nbsp;<strong>唐小律的发呆空间</strong>&nbsp;</a>
 
-    <aside id="menu"  >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
-      <div class="brand">
-        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/blog/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">唐小律</h5>
-          <a href="mailto:526505973@qq.com" title="526505973@qq.com" class="mail">526505973@qq.com</a>
-        </hgroup>
-      </div>
-    </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-            <li class="waves-block waves-effect">
-              <a href="/blog/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
               </a>
             </li>
+          
         
-            <li class="waves-block waves-effect">
-              <a href="/blog/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
               </a>
             </li>
+          
         
-            <li class="waves-block waves-effect">
-              <a href="/blog/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
               </a>
             </li>
+          
         
-            <li class="waves-block waves-effect">
-              <a href="/blog/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
               </a>
             </li>
+          
         
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/tangme" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
               </a>
             </li>
+          
         
-            <li class="waves-block waves-effect">
-              <a href="https://www.jianshu.com/u/a4795910d1a1" target="_blank" >
-                <i class="icon icon-lg icon-book"></i>
-                简书
-              </a>
-            </li>
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
         
       </ul>
     </div>
   </div>
-</aside>
+</nav>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">nodejs 相关</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
-    </div>
-</header>
-<header class="content-header post-header">
-
-    <div class="container fade-scale">
-        <h1 class="title">nodejs 相关</h1>
-        <h5 class="subtitle">
-            
-                <time datetime="2019-12-09T00:57:48.000Z" itemprop="datePublished" class="page-time">
-  2019-12-09
-</time>
-
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://source.unsplash.com/random') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="nodejs 相关">
+              
+            </span>
 
             
-        </h5>
-    </div>
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-12-09 08:57" pubdate>
+        2019年12月9日 早上
+      </time>
+    </span>
+  
+</div>
 
+<div class="mt-1">
+  
     
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      226 字
+    </span>
+  
 
-
-</header>
-
-
-<div class="container body-wrap">
+  
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#nvm"><span class="post-toc-number">1.</span> <span class="post-toc-text">nvm</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#建议全局安装的NPM的功能包"><span class="post-toc-number">2.</span> <span class="post-toc-text">建议全局安装的NPM的功能包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nrm"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">nrm</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#live-server"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">live-server</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rimraf"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">rimraf</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      2
+       分钟
+    </span>
+  
 
-
-<article id="post-nodejs-相关"
-  class="post-article article-type-post fade" itemprop="blogPost">
-
-    <div class="post-card">
-        <h1 class="post-card-title">nodejs 相关</h1>
-        <div class="post-meta">
-            <time class="post-time" title="2019-12-09 08:57:48" datetime="2019-12-09T00:57:48.000Z"  itemprop="datePublished">2019-12-09</time>
+  
+  
+</div>
 
             
+          </div>
 
-
-            
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
-
-
+          
         </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h1><blockquote>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">nodejs 相关</h1>
+            
+            <div class="markdown-body">
+              <h1 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h1><blockquote>
 <p>Node Version Manager<br>Node 版本管理器，在开发环境下，方便让一台电脑安装不同版本的node</p>
 </blockquote>
 <h1 id="建议全局安装的NPM的功能包"><a href="#建议全局安装的NPM的功能包" class="headerlink" title="建议全局安装的NPM的功能包"></a>建议全局安装的NPM的功能包</h1><h2 id="nrm"><a href="#nrm" class="headerlink" title="nrm"></a>nrm</h2><blockquote>
@@ -197,304 +236,206 @@
 <h2 id="live-server"><a href="#live-server" class="headerlink" title="live-server"></a>live-server</h2><blockquote>
 <p>将当前目录，设置为静态服务；之后可快速的通过本机ip或localhost的http形式，访问目录</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * 默认情况下，post请求时，是不会有返回；</span><br><span class="line"> * 如须支持，请在安装 live-server的node_modules目录下</span><br><span class="line"> * 找到 live-server 目录并进入，打开 index.js</span><br><span class="line"> * 修改第 42 行，如下：</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">if (req.method !== &quot;GET&quot; &amp;&amp; req.method !== &quot;POST&quot; &amp;&amp; req.method !== &quot;HEAD&quot;) return next();</span><br></pre></td></tr></table></figure>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs accesslog">/*<br> * 默认情况下，post请求时，是不会有返回；<br> * 如须支持，请在安装 live-server的node_modules目录下<br> * 找到 live-server 目录并进入，打开 index.js<br> * 修改第 <span class="hljs-number">42</span> 行，如下：<br> */<br><br>if (req.method !== <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span>&quot;</span> &amp;&amp; req.method !== <span class="hljs-string">&quot;<span class="hljs-keyword">POST</span>&quot;</span> &amp;&amp; req.method !== <span class="hljs-string">&quot;<span class="hljs-keyword">HEAD</span>&quot;</span>) return next();<br></code></pre></td></tr></table></figure>
 <h2 id="rimraf"><a href="#rimraf" class="headerlink" title="rimraf"></a>rimraf</h2><blockquote>
 <p>删除指定文件或目录；相比系统自带的delete，在删除目录层级很深的情形下，rimraf速度提升不少</p>
 </blockquote>
 
-        </div>
-
-        <blockquote class="post-copyright">
-    
-    <div class="content">
-        
-<span class="post-time">
-    最后更新时间：<time datetime="2019-12-09T01:13:16.273Z" itemprop="dateUpdated">2019-12-09 09:13:16</time>
-</span><br>
-
-
-        
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/12/09/nodejs-相关/" target="_blank" rel="external">https://tangme.github.io/2019/12/09/nodejs-相关/</a>
-        
-    </div>
-    
-    <footer>
-        <a href="https://tangme.github.io">
-            <img src="/blog/img/avatar.jpg" alt="唐小律">
-            唐小律
-        </a>
-    </footer>
-</blockquote>
-
-        
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
-
-
-        <div class="post-footer">
-            
-
-            
-<div class="page-share-wrap">
-    
-
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tangme.github.io/2019/12/09/nodejs-相关/&title=《nodejs 相关》 — 唐小律的发呆空间&pic=https://tangme.github.io/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tangme.github.io/2019/12/09/nodejs-相关/&title=《nodejs 相关》 — 唐小律的发呆空间&source=something like." data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tangme.github.io/2019/12/09/nodejs-相关/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nodejs 相关》 — 唐小律的发呆空间&url=https://tangme.github.io/2019/12/09/nodejs-相关/&via=https://tangme.github.io" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tangme.github.io/2019/12/09/nodejs-相关/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
-
-
-
-        </div>
-    </div>
-
-    
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/blog/2020/09/16/我的效率软件/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">我的效率软件</h4>
-      </a>
-    </div>
-  
-
-  
-    <div class="waves-block waves-effect next">
-      <a href="/blog/2019/11/28/Vue与Electron成长记/" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Vue与Electron成长记</h4>
-      </a>
-    </div>
-  
-</nav>
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</article>
-
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        哟~要意思下嘛 ^_~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
-        
-        <div class="reward-code">
-            <img id="rewardCode" src="/blog/img/alipay.jpg" alt="打赏二维码">
-        </div>
-        
-        <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" checked
-                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
-            <div class="reward-toggle-ctrol">
-                <span class="reward-toggle-item wechat">微信</span>
-                <span class="reward-toggle-label"></span>
-                <span class="reward-toggle-item alipay">支付宝</span>
             </div>
-        </label>
-        
-    </div>
-</div>
-
-
-
-</div>
-
-        <footer class="footer">
-    <div class="top">
-        
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
-            
-                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
-        <p><span>唐小律 &copy; 2015 - 2021</span>
-            <span>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
-            </span>
-        </p>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2020/09/16/%E6%88%91%E7%9A%84%E6%95%88%E7%8E%87%E8%BD%AF%E4%BB%B6/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">我的效率软件</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2019/11/28/Vue%E4%B8%8EElectron%E6%88%90%E9%95%BF%E8%AE%B0/">
+                        <span class="hidden-mobile">Vue与Electron成长记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
     </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
 </footer>
 
-    </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/debouncer.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/blog/js/lazyload.js" ></script>
+  
 
 
 
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tangme.github.io/2019/12/09/nodejs-相关/&title=《nodejs 相关》 — 唐小律的发呆空间&pic=https://tangme.github.io/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tangme.github.io/2019/12/09/nodejs-相关/&title=《nodejs 相关》 — 唐小律的发呆空间&source=something like." data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tangme.github.io/2019/12/09/nodejs-相关/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nodejs 相关》 — 唐小律的发呆空间&url=https://tangme.github.io/2019/12/09/nodejs-相关/&via=https://tangme.github.io" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tangme.github.io/2019/12/09/nodejs-相关/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aQW7DMAwEwP7/0+4D0ji7lFPA8uhUtE6kSQCWFPnzE6/jZb3+NXny/JnzV12wMDAwbss4Ttf5BvmWR7nys2FgYDyH8W7j2XGTd07CdHI2DAwMjHfPnG+ZHzH5DQYGBkbLSArUHJ/shYGBgZEXkyuJY3KV9k+1OAYGxg0ZK6Xpt3/+Sn8DAwPjVozZZX0eTNsm5TFaGBgYezNmiV0+eNEecSnRxMDA2Jpxfoh85GJlOOyqkQ4MDIz9GG2waxuQbasgb2e+zXAxMDC2Y8xSujZYz4Ythg0ADAyMrRmzxsAsaLYt0qVsFwMDYztGO+iQh8UW2YZ7DAyMvRlXJW1t8yAJskVQxsDAeABjNgSWpHrtgEV+EgwMjCcwku3zFLAdwmgv7z58DxgYGJsyVkYf8gu4lYu8+iPAwMDYmtE2AFaGM2bhuPgHgIGBsREjuXZvS9BZszMPvh/uCzEwMB7DWBkCy5PO2VDFH2fGwMDYmtE2INvtVwrgti2KgYGxN2Plaiwf22rbnO15MDAwnsPIQ2R+QZZ/TElN+haJgYHxAEbRIIyfmQXfnFdMt2FgYNyWcZQrKVavShkLKgYGxtaM/wyRs5ZDXvRiYGDszWhbAnnBee171tdtGBgY2zHawJcE0xlvdhmHgYGBcW27cVbcRhU5BgYGRtlizBufK4NiGBgYz2EkBWebFLYBeuVJDAyMvRl56dgG3DyIn+d4lzU1MTAw7sf4BUpCS6lSOT1dAAAAAElFTkSuQmCC" alt="微信分享二维码">
-</div>
+  
 
 
 
-
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-<script>
-var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
-</script>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
 
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</template>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
 
 
 
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
 
 
 
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '快看我~快看我！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '(つェ⊂)咦!又好了!';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
-</script>
+  <script  src="/blog/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/blog/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/blog/js/boot.js" ></script>
 
 
 
