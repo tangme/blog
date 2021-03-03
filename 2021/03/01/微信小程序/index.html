@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      345 字
+      441 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      4
        分钟
     </span>
   
@@ -241,7 +241,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：44 分钟前
+                  本文最后更新于：1 分钟前
                 
               </p>
             
@@ -256,14 +256,30 @@
 <pre>
 <code class="mermaid" >
 graph TB
-javascript --加载解析--> 页面
-css --加载解析--> 页面
-HTML --加载解析--> 页面
+javascript --加载解析--> 主线程
+css --加载解析--> 主线程
+HTML --加载解析--> 主线程
+主线程 --> 页面
+
 </code>
 </pre>
 
 <p>想最终看到一个网页，必须等到 <strong>javascript</strong> <strong>HTML</strong> <strong>CSS</strong> 三者均加载完毕并解析完成，才能显示到用户面前</p>
 <p>小程序的实现则不一样，由两个线程构成</p>
+
+<pre>
+<code class="mermaid" >
+graph TB
+javascript --加载解析--> 逻辑线程
+css --加载解析--> 渲染线程
+HTML --加载解析--> 渲染线程
+
+渲染线程 --> 页面
+逻辑线程 --> 页面
+
+</code>
+</pre>
+<p>渲染线程执行完毕后，用户就能看到页面，而不用等到 javascript(逻辑线程)执行完，因此可以简单粗暴的理解，快就快在这里</p>
 
             </div>
             <hr>
