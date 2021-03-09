@@ -241,12 +241,12 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 年前
+                  本文最后更新于：15 小时前
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><h3 id="Array-isArray-obj"><a href="#Array-isArray-obj" class="headerlink" title="Array.isArray(obj);"></a>Array.isArray(obj);</h3><blockquote>
+              <h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><h3 id="Array-isArray-obj"><a href="#Array-isArray-obj" class="headerlink" title="Array.isArray(obj) ;"></a>Array.isArray(obj) ;</h3><blockquote>
 <p>检测给定值是否为数组； 是则返回 true | 否则返回 false</p>
 </blockquote>
 <figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">console.log(<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Array</span>.</span></span>is<span class="hljs-constructor">Array([])</span>);<span class="hljs-comment">/* true */</span><br>console.log(<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Array</span>.</span></span>is<span class="hljs-constructor">Array(<span class="hljs-params">new</span> Array(1,2)</span>));<span class="hljs-comment">/* true */</span><br>console.log(<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Array</span>.</span></span>is<span class="hljs-constructor">Array(&#123;&#125;)</span>);<span class="hljs-comment">/* false */</span><br></code></pre></td></tr></table></figure>
@@ -271,8 +271,8 @@
 <li>findIndex <em>返回符合条件第一个值得下标索引</em></li>
 <li>indexOf <em>返回指定值在数组中首次出现的位置</em></li>
 <li>includes <em>数组是否包含指定值</em></li>
-<li>every <em>遍历数组，检测是否所有值都符合给定的函数判断；全部符合返回true</em></li>
-<li>some <em>遍历数组，检测是否有符合给定函数的判断；有一个符合则返回true</em></li>
+<li>every <em>遍历数组，检测是否所有值都符合给定的函数判断；全部符合返回 true</em></li>
+<li>some <em>遍历数组，检测是否有符合给定函数的判断；有一个符合则返回 true</em></li>
 </ul>
 <h2 id="对数组本身进行修改的方法"><a href="#对数组本身进行修改的方法" class="headerlink" title="对数组本身进行修改的方法"></a>对数组本身进行修改的方法</h2><h3 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h3><blockquote>
 <p>删除数组中的最后一个元素，并返回删除的元素</p>
@@ -295,13 +295,13 @@
 </blockquote>
 <ul>
 <li>index : 操作的起始位置</li>
-<li>howmany : 删除的个数 0:不删除 | 不传:删除至数组末尾 </li>
-<li>newItem,*,newItems : 新增的元素<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>];<br><span class="hljs-comment">/*从数组第二位新增两个元素,注:纯新增必须设置第二个参数为 0*/</span><br>arr.splice(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,&#123;<span class="hljs-attr">a</span>:<span class="hljs-number">1</span>&#125;,<span class="hljs-number">234</span>);<br><span class="hljs-built_in">console</span>.log(arr);<br><span class="hljs-comment">/* [ 1, 2, &#123; a: 1 &#125;, 234, 3, 4, 5 ] */</span><br></code></pre></td></tr></table></figure>
+<li>howmany : 删除的个数 0:不删除 | 不传:删除至数组末尾</li>
+<li>newItem,*,newItems : 新增的元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>];<br><span class="hljs-comment">/*从数组第二位新增两个元素,注:纯新增必须设置第二个参数为 0*/</span><br>arr.splice(<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,&#123;<span class="hljs-attr">a</span>:<span class="hljs-number">1</span>&#125;,<span class="hljs-number">234</span>);<br><span class="hljs-built_in">console</span>.log(arr);<br><span class="hljs-comment">/* [ 1, 2, &#123; a: 1 &#125;, 234, 3, 4, 5 ] */</span><br></code></pre></td></tr></table></figure>
 <h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h3><blockquote>
 <p>颠倒数组的前后顺序，并返回颠倒排序后的数组</p>
 </blockquote>
-</li>
-</ul>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">let</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>];<br>console.<span class="hljs-built_in">log</span>(arr);<br><span class="hljs-comment">/* [ 1, 2, 3, 4, 5 ] */</span><br><br>arr.<span class="hljs-built_in">reverse</span>();<br>console.<span class="hljs-built_in">log</span>(arr);<br><span class="hljs-comment">/* [ 5, 4, 3, 2, 1 ] */</span><br></code></pre></td></tr></table></figure>
 <h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><blockquote>
 <p>对数组进行排序 | 无参时 按字符编码顺序升序排序 | 有参：如下</p>
@@ -320,7 +320,7 @@
 </li>
 <li>如果 before 小于 next，在排序后的数组中 before 应该出现在 next 之后，则返回一个大于 0 的值</li>
 <li>如果 before 等于 next，返回 0</li>
-<li>如果 before 大于 next，在排序后的数组中 before 应该出现在 next 之前，则返回一个小于 0 的值 </li>
+<li>如果 before 大于 next，在排序后的数组中 before 应该出现在 next 之前，则返回一个小于 0 的值</li>
 </ul>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs xquery"><span class="hljs-keyword">let</span> arr = [<span class="hljs-built_in">&#123;name</span>:<span class="hljs-string">&#x27;a&#x27;</span>,age:<span class="hljs-number">23</span>&#125;,<span class="hljs-built_in">&#123;name</span>:<span class="hljs-string">&#x27;g&#x27;</span>,age:<span class="hljs-number">32</span>&#125;,<span class="hljs-built_in">&#123;name</span>:<span class="hljs-string">&#x27;d&#x27;</span>,age:<span class="hljs-number">2</span>&#125;,<span class="hljs-built_in">&#123;name</span>:<span class="hljs-string">&#x27;z&#x27;</span>,age:<span class="hljs-number">99</span>&#125;,<span class="hljs-built_in">&#123;name</span>:<span class="hljs-string">&#x27;j&#x27;</span>,age:<span class="hljs-number">13</span>&#125;,<span class="hljs-built_in">&#123;name</span>:<span class="hljs-string">&#x27;e&#x27;</span>,age:<span class="hljs-number">78</span>&#125;,<span class="hljs-built_in">&#123;name</span>:<span class="hljs-string">&#x27;p&#x27;</span>,age:<span class="hljs-number">34</span>&#125;,<span class="hljs-built_in">&#123;name</span>:<span class="hljs-string">&#x27;e&#x27;</span>,age:<span class="hljs-number">33</span>&#125;];<br><span class="hljs-keyword">function</span> sortBy(attr,ascORdesc = <span class="hljs-string">&#x27;asc&#x27;</span>)&#123;<br>	<span class="hljs-keyword">let</span> ascORdescFlag = (ascORdesc== <span class="hljs-string">&#x27;asc&#x27;</span>?<span class="hljs-number">1</span>:-<span class="hljs-number">1</span>);<br>	<span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span><span class="hljs-built_in"> sort</span>(before,<span class="hljs-keyword">next</span>)&#123;<br>		before = before[attr];<br>		<span class="hljs-keyword">next</span> = <span class="hljs-keyword">next</span>[attr];<br>		<span class="hljs-keyword">if</span>(before&lt;<span class="hljs-keyword">next</span>)&#123;<br>			<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>*ascORdescFlag;<br>		&#125;<br>		<span class="hljs-keyword">if</span>(before&gt;<span class="hljs-keyword">next</span>)&#123;<br>			<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>*ascORdescFlag;<br>		&#125;<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	&#125;;<br>&#125;<br>arr<span class="hljs-built_in">.sort</span>(sortBy(<span class="hljs-string">&#x27;age&#x27;</span>,<span class="hljs-number">22</span>));<br>console.log(arr);<br>/*<br>[ &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;z&#x27;</span>, age: <span class="hljs-number">99</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;e&#x27;</span>, age: <span class="hljs-number">78</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;p&#x27;</span>, age: <span class="hljs-number">34</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;e&#x27;</span>, age: <span class="hljs-number">33</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;g&#x27;</span>, age: <span class="hljs-number">32</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;a&#x27;</span>, age: <span class="hljs-number">23</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;j&#x27;</span>, age: <span class="hljs-number">13</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;d&#x27;</span>, age: <span class="hljs-number">2</span> &#125; ]<br>*/<br><br>arr<span class="hljs-built_in">.sort</span>(sortBy(<span class="hljs-string">&#x27;name&#x27;</span>));<br>console.log(arr);<br>/*<br>[ &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;a&#x27;</span>, age: <span class="hljs-number">23</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;d&#x27;</span>, age: <span class="hljs-number">2</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;e&#x27;</span>, age: <span class="hljs-number">78</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;e&#x27;</span>, age: <span class="hljs-number">33</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;g&#x27;</span>, age: <span class="hljs-number">32</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;j&#x27;</span>, age: <span class="hljs-number">13</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;p&#x27;</span>, age: <span class="hljs-number">34</span> &#125;,<br> &#123;<span class="hljs-built_in"> name</span>: <span class="hljs-string">&#x27;z&#x27;</span>, age: <span class="hljs-number">99</span> &#125; ]<br>*/<br></code></pre></td></tr></table></figure>
 <h3 id="fill"><a href="#fill" class="headerlink" title="fill"></a>fill</h3><blockquote>
@@ -331,11 +331,11 @@
 <li>start: 可选|填充的起始位置</li>
 <li>end: 可选|填充的结束位置</li>
 </ul>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs 1c">let arr = [&#x27;d&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>];<br>arr.fill(&#x27;hello&#x27;,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>);<br>console.<span class="hljs-built_in">log</span>(arr);<br>/* [ &#x27;d&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;hello&#x27;, &#x27;hello&#x27; ] */<br><br>arr.fill(&#x27;world&#x27;,<span class="hljs-number">2</span>);<br>console.<span class="hljs-built_in">log</span>(arr);<br>/* [ &#x27;d&#x27;, &#x27;b&#x27;, &#x27;world&#x27;, &#x27;world&#x27;, &#x27;world&#x27; ] */<br><br>arr.fill(&#x27;hello world&#x27;);<br>console.<span class="hljs-built_in">log</span>(arr);<br>/* <br>[ &#x27;hello world&#x27;,<br> &#x27;hello world&#x27;,<br> &#x27;hello world&#x27;,<br> &#x27;hello world&#x27;,<br> &#x27;hello world&#x27; ]<br>*/<br></code></pre></td></tr></table></figure>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs 1c">let arr = [&#x27;d&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>];<br>arr.fill(&#x27;hello&#x27;,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>);<br>console.<span class="hljs-built_in">log</span>(arr);<br>/* [ &#x27;d&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;hello&#x27;, &#x27;hello&#x27; ] */<br><br>arr.fill(&#x27;world&#x27;,<span class="hljs-number">2</span>);<br>console.<span class="hljs-built_in">log</span>(arr);<br>/* [ &#x27;d&#x27;, &#x27;b&#x27;, &#x27;world&#x27;, &#x27;world&#x27;, &#x27;world&#x27; ] */<br><br>arr.fill(&#x27;hello world&#x27;);<br>console.<span class="hljs-built_in">log</span>(arr);<br>/*<br>[ &#x27;hello world&#x27;,<br> &#x27;hello world&#x27;,<br> &#x27;hello world&#x27;,<br> &#x27;hello world&#x27;,<br> &#x27;hello world&#x27; ]<br>*/<br></code></pre></td></tr></table></figure>
 <h2 id="对数组本身无影响的方法"><a href="#对数组本身无影响的方法" class="headerlink" title="对数组本身无影响的方法"></a>对数组本身无影响的方法</h2><h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><blockquote>
 <p>连接两个或多个数组</p>
 </blockquote>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs prolog">let arr = [<span class="hljs-number">1</span>,&#123;age:<span class="hljs-number">28</span>&#125;,<span class="hljs-number">3</span>],arrb=[<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>],arrc = [];<br>arrc = arrc.concat(arr,arrb);<br>console.log(arrc);<br><span class="hljs-comment">/* [ 1, &#123; age: 28 &#125;, 3, &#x27;a&#x27;, &#x27;b&#x27; ] */</span><br><br>arr[<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;hello world&#x27;</span>;<br>arr[<span class="hljs-number">1</span>].age = <span class="hljs-number">18</span>;<br>console.log(arrc);<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">注意: 原数组中，引用类型的值修改会造成返回的新数组值修改 [引用的为同一地址]</span><br><span class="hljs-comment">[ 1, &#123; age: 18 &#125;, 3, &#x27;a&#x27;, &#x27;b&#x27; ] </span><br><span class="hljs-comment">*/</span><br><br></code></pre></td></tr></table></figure>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs prolog">let arr = [<span class="hljs-number">1</span>,&#123;age:<span class="hljs-number">28</span>&#125;,<span class="hljs-number">3</span>],arrb=[<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>],arrc = [];<br>arrc = arrc.concat(arr,arrb);<br>console.log(arrc);<br><span class="hljs-comment">/* [ 1, &#123; age: 28 &#125;, 3, &#x27;a&#x27;, &#x27;b&#x27; ] */</span><br><br>arr[<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;hello world&#x27;</span>;<br>arr[<span class="hljs-number">1</span>].age = <span class="hljs-number">18</span>;<br>console.log(arrc);<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">注意: 原数组中，引用类型的值修改会造成返回的新数组值修改 [引用的为同一地址]</span><br><span class="hljs-comment">[ 1, &#123; age: 18 &#125;, 3, &#x27;a&#x27;, &#x27;b&#x27; ]</span><br><span class="hljs-comment">*/</span><br><br></code></pre></td></tr></table></figure>
 <h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><blockquote>
 <p>将数组中得所有元素连接成字符串</p>
 </blockquote>
@@ -348,51 +348,51 @@
 </blockquote>
 <ul>
 <li>start | [起始下标] -1 为数组最后的元素</li>
-<li>end   | [结束下标]</li>
+<li>end | [结束下标]</li>
 </ul>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs 1c">let arr = [<span class="hljs-number">1</span>,&#x27;b&#x27;,&#123;c:&#x27;hello&#x27;&#125;,&#x27;d&#x27;];<br>let arrb = arr.slice(-<span class="hljs-number">1</span>),arrc = arr.slice();<br>console.<span class="hljs-built_in">log</span>(arrb);<br>/* [ &#x27;d&#x27; ] */<br><br>console.<span class="hljs-built_in">log</span>(arrc);<br>/* [ <span class="hljs-number">1</span>, &#x27;b&#x27;, &#123; c: &#x27;hello&#x27; &#125;, &#x27;d&#x27; ] */<br></code></pre></td></tr></table></figure>
 <h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><blockquote>
 <p>返回一个新数组,新元素为 原元素调用函数处理后的值</p>
 <ul>
-<li>currentValue：    当前值[原数组]    |  必须</li>
-<li>index：           当前值的下标索引  |  可选</li>
-<li>arr：             原数组对象        |  可选</li>
+<li>currentValue： 当前值[原数组] | 必须</li>
+<li>index： 当前值的下标索引 | 可选</li>
+<li>arr： 原数组对象 | 可选</li>
 </ul>
 </blockquote>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xquery"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;4&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,&#123;c:<span class="hljs-string">&#x27;hello&#x27;</span>&#125;];<br><span class="hljs-keyword">let</span> arrb = arr.<span class="hljs-keyword">map</span>(<span class="hljs-keyword">function</span>(<span class="hljs-type">item</span>)&#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-type">item</span>*<span class="hljs-number">2</span>;<br>&#125;);<br>console.log(arr);<br>/* [ <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;4&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, &#123; c: <span class="hljs-string">&#x27;hello&#x27;</span> &#125; ] */<br><br>console.log(arrb);<br>/* [ <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>, <span class="hljs-literal">NaN</span>, <span class="hljs-literal">NaN</span> ] */<br></code></pre></td></tr></table></figure>
 <h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><blockquote>
 <p>遍历数组的每个元素，并将元素传递给回调函数</p>
 <ul>
-<li>currentValue：    当前值[原数组]    |  必须</li>
-<li>index：           当前值的下标索引  |  可选</li>
-<li>arr：             原数组对象        |  可选</li>
+<li>currentValue： 当前值[原数组] | 必须</li>
+<li>index： 当前值的下标索引 | 可选</li>
+<li>arr： 原数组对象 | 可选</li>
 </ul>
 </blockquote>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xquery">/*<br>*数组去重<br>*此方法仅可用于基础类型的值 去重，引用类型无法去除<br>*/<br><span class="hljs-keyword">function</span> uniq(<span class="hljs-keyword">array</span>)&#123;<br>	<span class="hljs-keyword">let</span> returnArr = [],tmpMap = &#123;&#125;;<br>	<span class="hljs-keyword">array</span>.forEach((<span class="hljs-type">item</span>)=&gt;&#123;<br>		<span class="hljs-keyword">if</span>(!tmpMap[<span class="hljs-type">item</span>])&#123;<br>			returnArr.push(<span class="hljs-type">item</span>);<br>			tmpMap[<span class="hljs-type">item</span>] = <span class="hljs-number">1</span>;<br>		&#125;<br>	&#125;);<br>	<span class="hljs-keyword">return</span> returnArr;<br>&#125;<br><span class="hljs-keyword">let</span> testArr = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,&#123;d:<span class="hljs-string">&#x27;123&#x27;</span>&#125;,&#123;d:<span class="hljs-string">&#x27;456&#x27;</span>&#125;];<br>console.log(uniq(testArr));<br>/* [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, &#123; d: <span class="hljs-string">&#x27;123&#x27;</span> &#125; ] */<br></code></pre></td></tr></table></figure>
 <h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><blockquote>
 <p>返回一个新数组，新数组中的元素为符合判断条件的元素</p>
 <ul>
-<li>currentValue：    当前值[原数组]    |  必须</li>
-<li>index：           当前值的下标索引  |  可选</li>
-<li>arr：             原数组对象        |  可选</li>
+<li>currentValue： 当前值[原数组] | 必须</li>
+<li>index： 当前值的下标索引 | 可选</li>
+<li>arr： 原数组对象 | 可选</li>
 </ul>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/* 数组去重 </span><br><span class="hljs-comment">*此方法仅可用于基础类型的值 去重，引用类型无法去除</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">let</span> testArr = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>];<br><span class="hljs-keyword">let</span> reArr = testArr.filter(<span class="hljs-function">(<span class="hljs-params">item,i,arr</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> arr.indexOf(item)===i;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(reArr);<br><span class="hljs-comment">/* [ 1, 2, 3, &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27; ] */</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/* 数组去重</span><br><span class="hljs-comment">*此方法仅可用于基础类型的值 去重，引用类型无法去除</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">let</span> testArr = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>];<br><span class="hljs-keyword">let</span> reArr = testArr.filter(<span class="hljs-function">(<span class="hljs-params">item,i,arr</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> arr.indexOf(item)===i;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(reArr);<br><span class="hljs-comment">/* [ 1, 2, 3, &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27; ] */</span><br></code></pre></td></tr></table></figure>
 <h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><blockquote>
 <p>返回符合条件的 第一个值</p>
 <ul>
-<li>currentValue：    当前值[原数组]    |  必须</li>
-<li>index：           当前值的下标索引  |  可选</li>
-<li>arr：             原数组对象        |  可选</li>
+<li>currentValue： 当前值[原数组] | 必须</li>
+<li>index： 当前值的下标索引 | 可选</li>
+<li>arr： 原数组对象 | 可选</li>
 </ul>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> testArr = [&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">11</span>&#125;,&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">22</span>&#125;,&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">33</span>&#125;];<br><span class="hljs-keyword">let</span> reArr = testArr.find(<span class="hljs-function">(<span class="hljs-params">item,i,arr</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> item.age&gt;<span class="hljs-number">15</span>;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(reArr);<br><span class="hljs-comment">/* &#123; age: 22 &#125; */</span><br></code></pre></td></tr></table></figure>
 <h3 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h3><blockquote>
 <p>返回符合条件的 第一个值的下标索引</p>
 <ul>
-<li>currentValue：    当前值[原数组]    |  必须</li>
-<li>index：           当前值的下标索引  |  可选</li>
-<li>arr：             原数组对象        |  可选</li>
+<li>currentValue： 当前值[原数组] | 必须</li>
+<li>index： 当前值的下标索引 | 可选</li>
+<li>arr： 原数组对象 | 可选</li>
 </ul>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> testArr = [&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">11</span>&#125;,&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">22</span>&#125;,&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">33</span>&#125;];<br><span class="hljs-keyword">let</span> reArr = testArr.findIndex(<span class="hljs-function">(<span class="hljs-params">item,i,arr</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> item.age&gt;<span class="hljs-number">15</span>;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(reArr);<br><span class="hljs-comment">/* 1 */</span><br></code></pre></td></tr></table></figure>
@@ -403,7 +403,7 @@
 <li>item | 待检索的值</li>
 <li>start | 检索的起始位置</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/* 数组去重 </span><br><span class="hljs-comment">*此方法仅可用于基础类型的值 去重，引用类型无法去除</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">let</span> testArr = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>];<br><span class="hljs-keyword">let</span> reArr = testArr.filter(<span class="hljs-function">(<span class="hljs-params">item,i,arr</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> arr.indexOf(item)===i;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(reArr);<br><span class="hljs-comment">/* [ 1, 2, 3, &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27; ] */</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/* 数组去重</span><br><span class="hljs-comment">*此方法仅可用于基础类型的值 去重，引用类型无法去除</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">let</span> testArr = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>];<br><span class="hljs-keyword">let</span> reArr = testArr.filter(<span class="hljs-function">(<span class="hljs-params">item,i,arr</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> arr.indexOf(item)===i;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(reArr);<br><span class="hljs-comment">/* [ 1, 2, 3, &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27; ] */</span><br></code></pre></td></tr></table></figure>
 <h3 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf"></a>lastIndexOf</h3><blockquote>
 <p>返回指定元素值的第一个下标索引</p>
 </blockquote>
@@ -412,7 +412,7 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> testArr = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>];<br><span class="hljs-built_in">console</span>.log(testArr.lastIndexOf(<span class="hljs-string">&#x27;a&#x27;</span>));<br><span class="hljs-comment">/* 10 */</span><br></code></pre></td></tr></table></figure>
 <h3 id="includes"><a href="#includes" class="headerlink" title="includes"></a>includes</h3><blockquote>
-<p>检测数组中是否包含指定元素，有则true | 否则false</p>
+<p>检测数组中是否包含指定元素，有则 true | 否则 false</p>
 </blockquote>
 <ul>
 <li>item | 待检测的值</li>
@@ -420,20 +420,20 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> testArr = [<span class="hljs-number">11</span>,<span class="hljs-number">22</span>,<span class="hljs-number">33</span>];<br><span class="hljs-built_in">console</span>.log(testArr.includes(<span class="hljs-number">22</span>));<br><span class="hljs-comment">/* true */</span><br></code></pre></td></tr></table></figure>
 <h3 id="every"><a href="#every" class="headerlink" title="every"></a>every</h3><blockquote>
-<p>检测是否数组中的元素都符合指定的条件，都符合则返回true | 一旦有一个不符合返回 false</p>
+<p>检测是否数组中的元素都符合指定的条件，都符合则返回 true | 一旦有一个不符合返回 false</p>
 <ul>
-<li>currentValue：    当前值[原数组]    |  必须</li>
-<li>index：           当前值的下标索引  |  可选</li>
-<li>arr：             原数组对象        |  可选</li>
+<li>currentValue： 当前值[原数组] | 必须</li>
+<li>index： 当前值的下标索引 | 可选</li>
+<li>arr： 原数组对象 | 可选</li>
 </ul>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> testArr = [&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">11</span>&#125;,&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">22</span>&#125;,&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">33</span>&#125;];<br><span class="hljs-keyword">let</span> reArr = testArr.every(<span class="hljs-function">(<span class="hljs-params">item,i,arr</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> item.age&gt;<span class="hljs-number">15</span>;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(reArr);<br><span class="hljs-comment">/* false */</span><br></code></pre></td></tr></table></figure>
 <h3 id="some"><a href="#some" class="headerlink" title="some"></a>some</h3><blockquote>
-<p>检测数组中是否有一个满足条件的元素，只要有一个则返回true | 一个都没有则返回 false</p>
+<p>检测数组中是否有一个满足条件的元素，只要有一个则返回 true | 一个都没有则返回 false</p>
 <ul>
-<li>currentValue：    当前值[原数组]    |  必须</li>
-<li>index：           当前值的下标索引  |  可选</li>
-<li>arr：             原数组对象        |  可选</li>
+<li>currentValue： 当前值[原数组] | 必须</li>
+<li>index： 当前值的下标索引 | 可选</li>
+<li>arr： 原数组对象 | 可选</li>
 </ul>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> testArr = [&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">11</span>&#125;,&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">22</span>&#125;,&#123;<span class="hljs-attr">age</span>:<span class="hljs-number">33</span>&#125;];<br><span class="hljs-keyword">let</span> reArr = testArr.some(<span class="hljs-function">(<span class="hljs-params">item,i,arr</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> item.age&gt;<span class="hljs-number">15</span>;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(reArr);<br><span class="hljs-comment">/* true */</span><br></code></pre></td></tr></table></figure>
@@ -441,11 +441,11 @@
 <p>将数组中的每个值从左到右开始缩减，经函数处理后，最终返回一个值</p>
 </blockquote>
 <ul>
-<li>function <ul>
-<li>total             初始值, 或者计算结束后的返回值 | 必须</li>
-<li>currentValue：    当前值[原数组]    |  必须</li>
-<li>index：           当前值的下标索引  |  可选</li>
-<li>arr：             原数组对象        |  可选</li>
+<li>function<ul>
+<li>total 初始值, 或者计算结束后的返回值 | 必须</li>
+<li>currentValue： 当前值[原数组] | 必须</li>
+<li>index： 当前值的下标索引 | 可选</li>
+<li>arr： 原数组对象 | 可选</li>
 </ul>
 </li>
 <li>可选。传递给函数的初始值</li>
@@ -455,17 +455,16 @@
 <p>将数组中的每个值从右到左开始缩减，经函数处理后，最终返回一个值</p>
 </blockquote>
 <ul>
-<li>function <ul>
-<li>total             初始值, 或者计算结束后的返回值 | 必须</li>
-<li>currentValue：    当前值[原数组]    |  必须</li>
-<li>index：           当前值的下标索引  |  可选</li>
-<li>arr：             原数组对象        |  可选</li>
+<li>function<ul>
+<li>total 初始值, 或者计算结束后的返回值 | 必须</li>
+<li>currentValue： 当前值[原数组] | 必须</li>
+<li>index： 当前值的下标索引 | 可选</li>
+<li>arr： 原数组对象 | 可选</li>
 </ul>
 </li>
 <li>可选。传递给函数的初始值</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> testArr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>];<br><span class="hljs-built_in">console</span>.log(testArr.reduce(<span class="hljs-function">(<span class="hljs-params">total,item</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> total-item;<br>&#125;));<br><span class="hljs-comment">/* 注：不提供默认值时：初始的默认值为 末位元素的值*/</span><br><span class="hljs-comment">/* -19 */</span><br></code></pre></td></tr></table></figure>
-
             </div>
             <hr>
             <div>
