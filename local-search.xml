@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>RN-调试</title>
+    <link href="/blog/2021/03/11/RN-%E8%B0%83%E8%AF%95/"/>
+    <url>/blog/2021/03/11/RN-%E8%B0%83%E8%AF%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="安卓-Android"><a href="#安卓-Android" class="headerlink" title="安卓(Android)"></a>安卓(Android)</h1><h2 id="adb-相关命令"><a href="#adb-相关命令" class="headerlink" title="adb 相关命令"></a>adb 相关命令</h2><h3 id="adb-devices"><a href="#adb-devices" class="headerlink" title="adb devices"></a>adb devices</h3><p><img src="https://s3.ax1x.com/2021/03/11/6Ygh40.jpg" alt="查看已连接的设备"></p><h3 id="adb-reverse"><a href="#adb-reverse" class="headerlink" title="adb reverse"></a>adb reverse</h3><p>将电脑端口映射到移动设备</p><blockquote><p>adb reverse tcp:8081 tcp:8081</p></blockquote><h3 id="连接了多个设备，对指定设备进行操作"><a href="#连接了多个设备，对指定设备进行操作" class="headerlink" title="连接了多个设备，对指定设备进行操作"></a>连接了多个设备，对指定设备进行操作</h3><p>对指定设备安装应用</p><blockquote><p>adb -s [devicecode] install [package.app]<br>adb -s RCJ6R20921001617 install com.notive</p></blockquote><p>对指定设备映射端口</p><blockquote><p>adb -s [devicecode] reverse tcp:[port] tcp:[port]<br>adb -s RCJ6R20921001617 reverse tcp:8081 tcp:8081</p></blockquote><h3 id="查看手机当前启动-app-的应用名和包名"><a href="#查看手机当前启动-app-的应用名和包名" class="headerlink" title="查看手机当前启动 app 的应用名和包名"></a>查看手机当前启动 app 的应用名和包名</h3><blockquote><p>adb shell dumpsys window w |findstr / |findstr name=</p></blockquote><p><img src="https://s3.ax1x.com/2021/03/11/6YR0l8.jpg" alt="查看当前打开应用的包名"></p><h3 id="设备不能进入调试模式"><a href="#设备不能进入调试模式" class="headerlink" title="设备不能进入调试模式"></a>设备不能进入调试模式</h3><ol><li>撤销 usb 调试授权</li><li>重新开启 usb 调试</li><li>重新连接充电线，选择读取文件模式(非必要)</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>RN</tag>
+      
+      <tag>react native</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>微信小程序</title>
     <link href="/blog/2021/03/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <url>/blog/2021/03/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
