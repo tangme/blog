@@ -1,196 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>唐小律的发呆空间 - Just do it.</title><meta name="author" content="tanglv"><meta name="copyright" content="tanglv"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="something like.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="唐小律的发呆空间">
+<meta property="og:url" content="https://tangme.github.io/index.html">
+<meta property="og:site_name" content="唐小律的发呆空间">
+<meta property="og:description" content="something like.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="tanglv">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://tangme.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/blog/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/blog/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/blog/pwa/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/blog/pwa/favicon-16x16.png"/><link rel="mask-icon" href="/blog/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '唐小律的发呆空间',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-07-01 11:01:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/favicon.png">
-  <link rel="icon" type="image/png" href="/blog/img/favicon.ico">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="something like.">
-  <meta name="author" content="tanglv">
-  <meta name="keywords" content="">
-  <title>唐小律的发呆空间</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
-
-
-<link  rel="stylesheet" href="/blog/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"tangme.github.io","root":"/blog/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
-  </script>
-  <script  src="/blog/js/utils.js" ></script>
-  <script  src="/blog/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.3.0"></head>
-
-
-<body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/blog/">&nbsp;<strong>唐小律的发呆空间</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://source.unsplash.com/random') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="有道无术，术尚可求也；有术无道，止于术">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-        <a href="/blog/2021/04/22/%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/">每日总结</a>
-      </h1>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">唐小律的发呆空间</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">唐小律的发呆空间</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/blog/2021/05/08/Linux%E5%B8%B8%E8%AF%86%E6%89%AB%E7%9B%B2/" title="Linux常识扫盲">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="Linux常识扫盲"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/05/08/Linux%E5%B8%B8%E8%AF%86%E6%89%AB%E7%9B%B2/" title="Linux常识扫盲">Linux常识扫盲</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-05-08T02:42:44.000Z" title="发表于 2021-05-08 10:42:44">2021-05-08</time></span></div><div class="content">普通用户理论上很少接触 Linux 系统，毕竟 Windows 的图形化操作方便直接，普罗大众；但作为开发人员，不论你是前端还是后端，Linux 是一个绕不开的话题，最终都会须要学习它。
+本文不谈 Linux 任何原理，因为一上来就跟你掰扯这些，是感受不到实际操作快乐的。
+现在假定你还是 Windows 为生产力的输出，想体验 Linux,那么可以使用 WSL 来初步上手。
+我们假定的场景是：
 
-      <p class="index-excerpt">
-        <a href="/blog/2021/04/22/%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/">
-          
-          
-            
-          
-          记录当日点滴2021-04-22
+ 有了 Linux 环境
+ 进入目录，创建新的项目目录
+ 创建新的文件
+ 对文件进行编辑
+ 发布项目
+ 访问项目
+
+好了，开始吧~
+开始练手新建项目目录假定我们想在 /home/目录下新建 helloworld目录，命令如下：
+
+$ cd /home/$ mkdir helloworld
+
+新建项目文件在 helloworld 目录下，新建 index.html 文件
+
+$ cd helloworld$ :&gt;index.html
+
+修改文件内容
+$ vim index.html
+
+12345&#x2F;&#x2F;在编辑器中输入this is index.html file.&#x2F; ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/blog/2021/04/22/%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/" title="每日总结">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="每日总结"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/04/22/%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/" title="每日总结">每日总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-04-22T07:53:20.000Z" title="发表于 2021-04-22 15:53:20">2021-04-22</time></span></div><div class="content">记录当日点滴2021-04-27
+质检页面联调
+
+2021-04-25
+TTS 页面增加在线请求
+
+2021-04-24
+增加网页 TTS 页面
+质检增加两列布局
+
+2021-04-23
+利用 action 将 blogdev 自动部署到 blog 上
+
+2021-04-22
 利用 git 分支，完成了 ADD 数据解析新增的:
 1、解析规则脚本汇总并自动生成 json 文件
 2、修改对应的 ts 文件
@@ -198,114 +182,26 @@
 
 通过 国家信访网，国家政府网，反应了人防办停车问题
 
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-04-22 15:53" pubdate>
-              2021-04-22
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/blog/2021/04/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WSL/">如何使用WSL</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/blog/2021/04/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WSL/">
-          
-          
-            
-          
-          WSL(Windows Subsystem for Linux)，在 Windows 下提供 Linux 运行环境，不会带来传统虚拟机与双系统的累赘。
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/blog/2021/04/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WSL/" title="如何使用WSL">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="如何使用WSL"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/04/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WSL/" title="如何使用WSL">如何使用WSL</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-04-20T07:46:45.000Z" title="发表于 2021-04-20 15:46:45">2021-04-20</time></span></div><div class="content">WSL(Windows Subsystem for Linux)，在 Windows 下提供 Linux 运行环境，不会带来传统虚拟机与双系统的累赘。
 正常情况下想在 Windows 下使用 Linux，得安装虚拟机，然后在虚拟机中运行 Linux，虚拟机本身带来了开销。或者制作双系统，但又带来了 Windows 与 Linux 两系统间切换的麻烦。所以 WSL 解决了以上两个痛点。
-安装教程直接
-        </a>
-      </p>
+安装教程直接参考官网的即可，非常清晰。
+两篇参考文章，还没用到，留作备份
+WSL2 来了！但是能正常使用并不简单
+关于使用 WSL2 出现“参考的对象类型不支持尝试的操作”的解决方法
+使用VS Code编辑现有的项目，有下面几种方式1、进入WLS下的项目目录，运行 code . 即可。
+默认情况下WSL没有设置root密码，可如下来设置
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-04-20 15:46" pubdate>
-              2021-04-20
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
+$ sudo passwd root
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/blog/2021/04/06/%E4%B9%B0%E6%88%BF%E7%9B%B8%E5%85%B3/">买房相关</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/blog/2021/04/06/%E4%B9%B0%E6%88%BF%E7%9B%B8%E5%85%B3/">
-          
-          
-            
-          
-          专业名词扫盲容积率简单粗暴的理解：固定面积的土地，盖多少层楼、住多少人的关系。
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/blog/2021/04/06/%E4%B9%B0%E6%88%BF%E7%9B%B8%E5%85%B3/" title="买房相关">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="买房相关"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/04/06/%E4%B9%B0%E6%88%BF%E7%9B%B8%E5%85%B3/" title="买房相关">买房相关</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-04-06T06:35:25.000Z" title="发表于 2021-04-06 14:35:25">2021-04-06</time></span></div><div class="content">专业名词扫盲容积率简单粗暴的理解：固定面积的土地，盖多少层楼、住多少人的关系。
 容积率高：表明这一区域内，楼层高，居住人口多，公共区域活动拥挤。
 容积率低：表明这一区域，楼层低，居住人口少，公共区域活动宽松。
 例子：一老小区，原来是五层楼梯房，共一个单元，正好停五辆私家车，还能散下步；拆迁重建后，为 31 层的电梯房，地下停车场只能停 25 量车，上下电梯还等等。因此，理论上来说 容积率越低越好。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-04-06 14:35" pubdate>
-              2021-04-06
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/blog/2021/03/25/Flex-%E5%B8%83%E5%B1%80/">Flex-布局</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/blog/2021/03/25/Flex-%E5%B8%83%E5%B1%80/">
-          
-          
-            
-          
-          三列布局
+月供单纯的从利息角度来看，等额本金比等额本息省钱。但从前期现金流看，等额本息宽松
+等额本息每个月还相同的利息，开始月到结束月，每月还的金额相等
+等额本金每个月还相同的本金，开始月到结束月，每月还的金额逐月降低
+满五唯一房产证满五年，并且是唯一住房，不需要交个人所得税
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/blog/2021/03/25/Flex-%E5%B8%83%E5%B1%80/" title="Flex-布局">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="Flex-布局"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/03/25/Flex-%E5%B8%83%E5%B1%80/" title="Flex-布局">Flex-布局</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-25T07:29:13.000Z" title="发表于 2021-03-25 15:29:13">2021-03-25</time></span></div><div class="content">三列布局
 
   左边栏
   
@@ -323,92 +219,32 @@
 
 点击显示源代码
 
-123456789101112&lt;section style=&quot;display:flex;&quot;&gt;  &lt;div style=&quot;width:50px;bac
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-25 15:29" pubdate>
-              2021-03-25
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/blog/2021/03/19/CSS-%E5%88%B6%E4%BD%9C%E5%9B%BE%E5%BD%A2%E5%B0%8F%E7%9F%A5%E8%AF%86/" target="_self">
-          <img src="https://s4.ax1x.com/2021/03/19/6W4Vqx.jpg" srcset="/blog/img/loading.gif" alt="CSS-制作图形小知识">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/blog/2021/03/19/CSS-%E5%88%B6%E4%BD%9C%E5%9B%BE%E5%BD%A2%E5%B0%8F%E7%9F%A5%E8%AF%86/">CSS-制作图形小知识</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/blog/2021/03/19/CSS-%E5%88%B6%E4%BD%9C%E5%9B%BE%E5%BD%A2%E5%B0%8F%E7%9F%A5%E8%AF%86/">
-          
-          
-            
-          
-          同心圆
+123456789101112&lt;section style&#x3D;&quot;display:flex;&quot;&gt;  &lt;div style&#x3D;&quot;width:50px;background-color:aliceblue;&quot;&gt;左边栏&lt;&#x2F;div&gt;  &lt;div style&#x3D;&quot;flex:1;background-color:chocolate;&quot;&gt;    &lt;ul&gt;      &lt;li&gt;左右两侧边栏高度，跟随内容高度&lt;&#x2F;li&gt;      &lt;li&gt;内容区域为不固定高度&lt;&#x2F;li&gt;      &lt;li&gt;我是来增加高度的&lt;&#x2F;li&gt;    &lt;&#x2F;ul&gt;   ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/blog/2021/03/19/CSS-%E5%88%B6%E4%BD%9C%E5%9B%BE%E5%BD%A2%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="CSS-制作图形小知识">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="CSS-制作图形小知识"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/03/19/CSS-%E5%88%B6%E4%BD%9C%E5%9B%BE%E5%BD%A2%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="CSS-制作图形小知识">CSS-制作图形小知识</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-19T03:37:48.000Z" title="发表于 2021-03-19 11:37:48">2021-03-19</time></span></div><div class="content">同心圆
 
 
 点击显示源代码
 
-1234567&lt;div style=&quot;width: 100px; height: 100px;  border-radius: 50%;  padding: 10px;  border: 10px solid;  background-color: currentColor;  background-clip:content-box;&quot;&gt
-        </a>
-      </p>
+1234567&lt;div style&#x3D;&quot;width: 100px; height: 100px;  border-radius: 50%;  padding: 10px;  border: 10px solid;  background-color: currentColor;  background-clip:content-box;&quot;&gt;&lt;&#x2F;div&gt;
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-19 11:37" pubdate>
-              2021-03-19
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/blog/2021/03/11/RN-%E8%B0%83%E8%AF%95/" target="_self">
-          <img src="https://s3.ax1x.com/2021/03/11/6Y6HRU.png" srcset="/blog/img/loading.gif" alt="RN-调试">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/blog/2021/03/11/RN-%E8%B0%83%E8%AF%95/">RN-调试</a>
-      </h1>
 
-      <p class="index-excerpt">
-        <a href="/blog/2021/03/11/RN-%E8%B0%83%E8%AF%95/">
-          
-          
-            
-          
-          安卓(Android)adb 相关命令adb devices
+三角形向上
+
+
+
+点击显示源代码
+
+123456&lt;div style&#x3D;&quot;width: 0;    height: 0;    border-left: 50px solid transparent;    border-right: 50px solid transparent;    border-bottom: 100px solid red;&quot;&gt;&lt;&#x2F;div&gt;
+
+
+
+向下
+
+
+
+点击显示源代码
+
+123456&lt;div style&#x3D;&quot;width: 0 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/blog/2021/03/11/RN-%E8%B0%83%E8%AF%95/" title="RN-调试">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="RN-调试"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/03/11/RN-%E8%B0%83%E8%AF%95/" title="RN-调试">RN-调试</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-11T01:27:04.000Z" title="发表于 2021-03-11 09:27:04">2021-03-11</time></span></div><div class="content">安卓(Android)adb 相关命令adb devices
 adb reverse将电脑端口映射到移动设备
 
 adb reverse tcp:8081 tcp:8081
@@ -417,398 +253,59 @@ adb reverse tcp:8081 tcp:8081
 
 adb -s [devicecode] install [package.app]adb -s RCJ6R20921001617 install com.notive
 
+对指定设备映射端口
 
-        </a>
-      </p>
+adb -s [devicecode] reverse tcp:[port] tcp:[port]adb -s RCJ6R20921001617 reverse tcp:8081 tcp:8081
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-11 09:27" pubdate>
-              2021-03-11
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/blog/tags/RN/">RN</a>
-            
-              <a href="/blog/tags/react-native/">react native</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
+查看手机当前启动 app 的应用名和包名
+adb shell dumpsys window w |findstr / |findstr name=
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/blog/2021/03/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" target="_self">
-          <img src="https://s3.ax1x.com/2021/03/01/6iPdBt.jpg" srcset="/blog/img/loading.gif" alt="微信小程序">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/blog/2021/03/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a>
-      </h1>
 
-      <p class="index-excerpt">
-        <a href="/blog/2021/03/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-          
-          
-            
-          
-          概念扫盲缘起微信小程序不是微信自己空穴来风，而是微信想让自己这个 app 用的更加顺滑。我之前虽未从事过微信的开发，但是之前微信里的文章与应用是靠公众号传播的，也就是基于网页。但基于网页，避免不了的一个问题便是：首页白屏。
+设备不能进入调试模式
+撤销 usb 调试授权
+重新开启 usb 调试
+重新连接充电线，选择读取文件模式(非必要)
+
+wifi (无数据线连接)
+摇晃安卓设备
+点击change bundle，并输入开发本机 ip 地址与端口号
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/blog/2021/03/11/hello-world/" title="Hello World">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/03/11/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-11T01:20:40.439Z" title="发表于 2021-03-11 09:20:40">2021-03-11</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server1$ hexo server
+
+More info: Server
+Generate static files1$ hexo generate
+
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+
+More info: Deployment
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/blog/2021/03/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" title="微信小程序">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="微信小程序"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/03/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" title="微信小程序">微信小程序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-01T07:26:46.000Z" title="发表于 2021-03-01 15:26:46">2021-03-01</time></span></div><div class="content">概念扫盲缘起微信小程序不是微信自己空穴来风，而是微信想让自己这个 app 用的更加顺滑。我之前虽未从事过微信的开发，但是之前微信里的文章与应用是靠公众号传播的，也就是基于网页。但基于网页，避免不了的一个问题便是：首页白屏。
 在推出小程序之前，微信也推出过微信 Web 资源离线存储解决方案，可以解决部分白屏的场景但也非全部。并且基于 web 网页的交互存在页面切换生硬和点击的迟滞感。
-因此小程序这个
-        </a>
-      </p>
+因此小程序这个概念和方案就应运而生了
+小程序到底是啥小程序说白了，还是web游览器。
+对~ 你没有看错，还是游览器，但是经过改造的游览器。
+我们平常所使用的游览器有且只有一个主线程，因此，在我们看到最终界面时，时(流)序(程)图 是下面这样的
+graph TB
+javascript --加载解析--&gt; 主线程
+css --加载解析--&gt; 主线程
+HTML --加载解析--&gt; 主线程
+主线程 --&gt; 页面
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-01 15:26" pubdate>
-              2021-03-01
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/blog/2021/02/18/JS%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E5%8C%85/" target="_self">
-          <img src="https://s3.ax1x.com/2021/02/20/y5Dnk8.jpg" srcset="/blog/img/loading.gif" alt="JS图片分析开源包">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/blog/2021/02/18/JS%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E5%8C%85/">JS图片分析开源包</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/blog/2021/02/18/JS%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E5%8C%85/">
-          
-          
-            
-          
-          face-api.js人像识别
+想最终看到一个网页，必须等到 javascript HTML CSS 三者均加载完毕并解析完成，才能显示到用户面前
+小程序的实现则不一样，由两个线程构成
+graph TB
+jav ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/blog/2021/02/18/JS%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E5%8C%85/" title="JS图片分析开源包">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="JS图片分析开源包"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2021/02/18/JS%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90%E5%BC%80%E6%BA%90%E5%8C%85/" title="JS图片分析开源包">JS图片分析开源包</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-02-18T07:59:10.000Z" title="发表于 2021-02-18 15:59:10">2021-02-18</time></span></div><div class="content">face-api.js人像识别
 tesseract.jsOCR 识别
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-18 15:59" pubdate>
-              2021-02-18
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/blog/2020/09/16/%E6%88%91%E7%9A%84%E6%95%88%E7%8E%87%E8%BD%AF%E4%BB%B6/" target="_self">
-          <img src="https://s3.ax1x.com/2021/02/20/y5sJiT.jpg" srcset="/blog/img/loading.gif" alt="我的效率软件">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/blog/2020/09/16/%E6%88%91%E7%9A%84%E6%95%88%E7%8E%87%E8%BD%AF%E4%BB%B6/">我的效率软件</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/blog/2020/09/16/%E6%88%91%E7%9A%84%E6%95%88%E7%8E%87%E8%BD%AF%E4%BB%B6/">
-          
-          
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/blog/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/blog/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">tanglv</div><div class="author-info__description">something like.</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/05/08/Linux%E5%B8%B8%E8%AF%86%E6%89%AB%E7%9B%B2/" title="Linux常识扫盲"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="Linux常识扫盲"/></a><div class="content"><a class="title" href="/blog/2021/05/08/Linux%E5%B8%B8%E8%AF%86%E6%89%AB%E7%9B%B2/" title="Linux常识扫盲">Linux常识扫盲</a><time datetime="2021-05-08T02:42:44.000Z" title="发表于 2021-05-08 10:42:44">2021-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/04/22/%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/" title="每日总结"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="每日总结"/></a><div class="content"><a class="title" href="/blog/2021/04/22/%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/" title="每日总结">每日总结</a><time datetime="2021-04-22T07:53:20.000Z" title="发表于 2021-04-22 15:53:20">2021-04-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/04/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WSL/" title="如何使用WSL"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="如何使用WSL"/></a><div class="content"><a class="title" href="/blog/2021/04/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WSL/" title="如何使用WSL">如何使用WSL</a><time datetime="2021-04-20T07:46:45.000Z" title="发表于 2021-04-20 15:46:45">2021-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/04/06/%E4%B9%B0%E6%88%BF%E7%9B%B8%E5%85%B3/" title="买房相关"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="买房相关"/></a><div class="content"><a class="title" href="/blog/2021/04/06/%E4%B9%B0%E6%88%BF%E7%9B%B8%E5%85%B3/" title="买房相关">买房相关</a><time datetime="2021-04-06T06:35:25.000Z" title="发表于 2021-04-06 14:35:25">2021-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/03/25/Flex-%E5%B8%83%E5%B1%80/" title="Flex-布局"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="Flex-布局"/></a><div class="content"><a class="title" href="/blog/2021/03/25/Flex-%E5%B8%83%E5%B1%80/" title="Flex-布局">Flex-布局</a><time datetime="2021-03-25T07:29:13.000Z" title="发表于 2021-03-25 15:29:13">2021-03-25</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
             
-          
-          Windows OSscrcpy在 Linux,Window,macOS 上，操控或显示 android 设备
-Wox快速搜索，类似 mac 的 spotlight，与 win 10 搜索； alt + space 快速呼出(可改快捷键)，非常的爽
-Everything文件搜索，配合 Wow 使用，快速揪出你想要的文件
-QuickLook空格键后，快速预览工具
-Riot图片压缩，用过的人都说好
-P
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-16 10:53" pubdate>
-              2020-09-16
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/blog/2019/12/09/nodejs-%E7%9B%B8%E5%85%B3/" target="_self">
-          <img src="https://s3.ax1x.com/2021/02/22/yHe27R.png" srcset="/blog/img/loading.gif" alt="nodejs 相关">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/blog/2019/12/09/nodejs-%E7%9B%B8%E5%85%B3/">nodejs 相关</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/blog/2019/12/09/nodejs-%E7%9B%B8%E5%85%B3/">
-          
-          
-            
-          
-          科普扫盲npx
-npx 会首先在当前目录下查找模块，如果有则执行 如果当前目录下没有指定模块，则将模块下载到临时文件，然后执行模块，执行后删除
-
-
-轻松地运行本地命令
-无需安装的命令执行
-使用不同的 Node.js 版本运行代码
-直接从 URL 运行任意代码片段
-
-nvm
-Node Version ManagerNode 版本管理器，在开发环境下，方便让一台电脑安装不同版本的 node
-
-调试
-n
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2019-12-09 08:57" pubdate>
-              2019-12-09
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
-
-
-
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-
-    
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/blog/js/duration.js"></script> </div> 
-  </div>
-  
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
-  
-
-  
-</footer>
-
-<!-- SCRIPTS -->
-
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/blog/js/debouncer.js" ></script>
-<script  src="/blog/js/events.js" ></script>
-<script  src="/blog/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  
-    <script  src="/blog/js/lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
-
-  <script  src="/blog/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/blog/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/blog/js/boot.js" ></script>
-
-
-
-</body>
-</html>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E8%AF%91%E6%96%87/"><span class="card-category-list-name">译文</span><span class="card-category-list-count">2</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/blog/tags/CSS/" style="font-size: 1.1em; color: #999">CSS</a> <a href="/blog/tags/RN/" style="font-size: 1.1em; color: #999">RN</a> <a href="/blog/tags/javascript/" style="font-size: 1.5em; color: #99a9bf">javascript</a> <a href="/blog/tags/react-native/" style="font-size: 1.1em; color: #999">react native</a> <a href="/blog/tags/vue/" style="font-size: 1.1em; color: #999">vue</a> <a href="/blog/tags/%E7%9B%AE%E5%BD%95/" style="font-size: 1.1em; color: #999">目录</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/blog/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2019/12/"><span class="card-archive-list-date">十二月 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2019/11/"><span class="card-archive-list-date">十一月 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2018/08/"><span class="card-archive-list-date">八月 2018</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">19</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-07-01T03:01:52.379Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By tanglv</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><div class="js-pjax"></div><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label>✨ 网站已更新最新版本 👉</label> <a href="javascript:void(0)" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/blog/sw.js",{scope:"/blog/"})}));</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

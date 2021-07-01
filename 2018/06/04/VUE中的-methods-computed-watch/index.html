@@ -1,252 +1,146 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VUE中的-methods-computed-watch | 唐小律的发呆空间</title><meta name="keywords" content="vue"><meta name="author" content="tanglv"><meta name="copyright" content="tanglv"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="原文地址 methods,computed和watch的易用性与相互之间明确使用场景的定位，是我喜欢使用 Vue 的原因之一。如不了解以上三者，那么很难发挥 Vue 的所有潜在功能。在我看来，大多数对此(Vue)框架有困惑的人，同时对以上三者的区别也有着疑惑，那么现在让我们来探究下。 如果你只须一个结论，或者没有时间通读全文，以下则是总结：  methods: 如同词语自身描述的一样。它们是处理对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VUE中的-methods-computed-watch">
+<meta property="og:url" content="https://tangme.github.io/2018/06/04/VUE%E4%B8%AD%E7%9A%84-methods-computed-watch/index.html">
+<meta property="og:site_name" content="唐小律的发呆空间">
+<meta property="og:description" content="原文地址 methods,computed和watch的易用性与相互之间明确使用场景的定位，是我喜欢使用 Vue 的原因之一。如不了解以上三者，那么很难发挥 Vue 的所有潜在功能。在我看来，大多数对此(Vue)框架有困惑的人，同时对以上三者的区别也有着疑惑，那么现在让我们来探究下。 如果你只须一个结论，或者没有时间通读全文，以下则是总结：  methods: 如同词语自身描述的一样。它们是处理对">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2018-06-04T01:53:10.000Z">
+<meta property="article:modified_time" content="2021-03-11T01:20:40.431Z">
+<meta property="article:author" content="tanglv">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://tangme.github.io/2018/06/04/VUE%E4%B8%AD%E7%9A%84-methods-computed-watch/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/blog/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/blog/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/blog/pwa/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/blog/pwa/favicon-16x16.png"/><link rel="mask-icon" href="/blog/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'VUE中的-methods-computed-watch',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-03-11 09:20:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/favicon.png">
-  <link rel="icon" type="image/png" href="/blog/img/favicon.ico">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="something like.">
-  <meta name="author" content="tanglv">
-  <meta name="keywords" content="">
-  <title>VUE中的-methods-computed-watch - 唐小律的发呆空间</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/blog/lib/hint/hint.min.css" />
-
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
-
-
-<link  rel="stylesheet" href="/blog/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"tangme.github.io","root":"/blog/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
-  </script>
-  <script  src="/blog/js/utils.js" ></script>
-  <script  src="/blog/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.3.0"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/blog/">&nbsp;<strong>唐小律的发呆空间</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://source.unsplash.com/random') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="VUE中的-methods-computed-watch">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-author" aria-hidden="true"></i>
-      tanglv
-    </span>
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2018-06-04 09:53" pubdate>
-        2018年6月4日 上午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      3.1k 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      37
-       分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
-
-            
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">VUE中的-methods-computed-watch</h1>
-            
-              <p class="note note-info">
-                
-                  本文最后更新于：2 个月前
-                
-              </p>
-            
-            <div class="markdown-body">
-              <p><a target="_blank" rel="noopener" href="https://css-tricks.com/methods-computed-and-watchers-in-vue-js/#article-header-id-2">原文地址</a></p>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog/">唐小律的发呆空间</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">VUE中的-methods-computed-watch</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-06-04T01:53:10.000Z" title="发表于 2018-06-04 09:53:10">2018-06-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-11T01:20:40.431Z" title="更新于 2021-03-11 09:20:40">2021-03-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E8%AF%91%E6%96%87/">译文</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="VUE中的-methods-computed-watch"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><a target="_blank" rel="noopener" href="https://css-tricks.com/methods-computed-and-watchers-in-vue-js/#article-header-id-2">原文地址</a></p>
 <p><code>methods</code>,<code>computed</code>和<code>watch</code>的易用性与相互之间明确使用场景的定位，是我喜欢使用 Vue 的原因之一。如不了解以上三者，那么很难发挥 Vue 的所有潜在功能。在我看来，大多数对此(Vue)框架有困惑的人，同时对以上三者的区别也有着疑惑，那么现在让我们来探究下。</p>
 <p>如果你只须一个结论，或者没有时间通读全文，以下则是总结：</p>
 <ul>
@@ -257,12 +151,15 @@
 <p>如果以上的措辞使你困惑，别着急。接下来我们将深入讲解，以希望能解决你的所有疑惑。如果你已对 JavaScript 很熟悉，methods 对你应毫无压力，(当然除了一两个值得留心的小点)。那么可以直接游览 computed 和 watch 章节。</p>
 <h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><p>Methods 应该是我们在 Vue 中使用的最多了东西了。They’re aptly named as, in essence, we’re hanging a function off of an object。在给事件响应指令，亦或重构一个函数进行复用的情形下，方法都尤为实用。例如，你能在一个方法中调用另一个方法。也能在生命周期钩子事件中调用方法。使用很是灵巧。<br>以下为一个示例演示：</p>
 <p><a target="_blank" rel="noopener" href="//codepen.io/sdras/embed/caf96f7c14dc52323b97dd9845a0bf64?height=300&theme-id=1&slug-hash=caf96f7c14dc52323b97dd9845a0bf64&default-tab=result&user=sdras&embed-version=2&pen-title=Slim%20example%20of%20methods">点击查看在线 DEMO</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- html code --&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;language-css&quot;</span></span><br><span class="hljs-tag">	&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;tryme&quot;</span>&gt;</span>Try Me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>&lt;/code<br>&gt;<br></code></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/* javascript code*/</span><br><span class="hljs-keyword">new</span> Vue(&#123;<br>	el: <span class="hljs-string">&quot;#app&quot;</span>,<br>	<span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> &#123;<br>		<span class="hljs-keyword">return</span> &#123;<br>			message: <span class="hljs-literal">null</span>,<br>		&#125;;<br>	&#125;,<br>	methods: &#123;<br>		<span class="hljs-function"><span class="hljs-title">tryme</span>(<span class="hljs-params"></span>)</span> &#123;<br>			<span class="hljs-built_in">this</span>.message = <span class="hljs-built_in">Date</span>();<br>		&#125;,<br>	&#125;,<br>&#125;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html code --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">code</span> <span class="attr">class</span>=<span class="string">&quot;language-css&quot;</span></span></span><br><span class="line"><span class="tag">	&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;tryme&quot;</span>&gt;</span>Try Me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&lt;/code</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* javascript code*/</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">	<span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			message: <span class="literal">null</span>,</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods: &#123;</span><br><span class="line">		<span class="function"><span class="title">tryme</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">			<span class="built_in">this</span>.message = <span class="built_in">Date</span>();</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>我们也能直接在事件中中执行逻辑指令，如 <code>&lt;button @click=&quot;message = Date()&quot;&gt;Try Me&lt;/button&gt;</code>，在这个小例子中也能顺利执行。但是呢，随着我们开发应用复杂度的增长，更常见的作法是如我们上面例子所展示的，把业务代码抽取出，以获得更好的代码可读性与可维护性。在 Vue 中使用指令时，也有一些限制，例如：表达式是允许的，但是声明则不行。</p>
 <p>你可能注意到了，我们在 Vue 实例或组件中调用此方法，并且在此方法中可以访问所有的 data 数据，此例中为,<code>this.message</code>。在指令中不必非得像调用函数那样调用方法。例如，<code>@click=”methodName()”</code> 可以引用为<code>@click=”methodName”</code>，当然如需传递参数时，则是<code>@click=”methodName(param)”</code>。</p>
 <p>使用指令调用方法很赞的另一个原因是，我们能够使用一些修饰符。下例中一个很有用的修饰符为<code>.prevent</code>，此修饰符将阻止默认提交事件后刷新页面的情形，例子如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">v-on:submit.prevent</span>=<span class="hljs-string">&quot;onSubmit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">&quot;onSubmit&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>更多信息，请<a target="_blank" rel="noopener" href="https://vuejs.org/v2/api/#v-on">移步到这</a></p>
 <h1 id="Computed"><a href="#Computed" class="headerlink" title="Computed"></a>Computed</h1><p>计算属性在控制处理已有数据上是非常有用的。当你需要对一个大量数据进行排序又不想每次获取计算后的返回值时，可以了解下计算属性。</p>
 <p>以下为一些适当使用计算属性的条件，但不局限与此：</p>
@@ -275,30 +172,40 @@
 <p>对于理解 Vue，计算属性是很重要的一部分。计算属性的计算值会根据它们所依赖的数据进行缓存，并只有当符合特定条件时更新。当合理使用计算属性时，其是非常高效和有用的。此外，已经有很多健壮的库和函数提供给我们来处理业务逻辑部分，以降低编程时的代码量。</p>
 <p>计算属性并不像方法那样来的使用，尽管它两看起来很相似。计算属性是：你在一个函数中编写逻辑代码并返回符合逻辑的值，但是 此方法的函数名 将会变成一个属性，就像你在应用使用 <code>data</code>里的属性一样。</p>
 <p>如果我们想在一个大量的英雄名称列表中，通过输入关键字来过滤内容，我们可以采取下面的方式，并且通过这个简单的例子让你对计算属性有个初步的概念。首先，我们的使用存储在 <code>data</code> 中的 <code>names</code> 属性，将列表内容输出在模板中：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>  <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      names: [<br>        <span class="hljs-string">&#x27;Evan You&#x27;</span>,<br>        <span class="hljs-string">&#x27;John Lindquist&#x27;</span>,<br>        <span class="hljs-string">&#x27;Jen Looper&#x27;</span>,<br>        <span class="hljs-string">&#x27;Miriam Suzanne&#x27;</span>,<br>        ...<br>      ]<br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Heroes<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;name in names&quot;</span>&gt;</span>&#123;&#123; name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      names: [</span><br><span class="line">        <span class="string">&#x27;Evan You&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;John Lindquist&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;Jen Looper&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;Miriam Suzanne&#x27;</span>,</span><br><span class="line">        ...</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heroes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;name in names&quot;</span>&gt;</span>&#123;&#123; name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>现在，给这些名称添加一些过滤代码。首先，给文本输入框绑定<code>v-mode</code>，且初始为空字符串值，当然最终我们会使用文本输入框中的值去匹配和过滤后我们的名称列表。给输入文本框绑定的属性值为<code>findName</code>，其与<code>data</code>中的值保持引用关联。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;filtername&quot;</span>&gt;</span>Find your hero:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;findName&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;filtername&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> &#123;<br>  <span class="hljs-keyword">return</span> &#123;<br>    findName: <span class="hljs-string">&#x27;&#x27;</span>,<br>    names: [<br>      <span class="hljs-string">&#x27;Evan You&#x27;</span>,<br>      <span class="hljs-string">&#x27;John Lindquist&#x27;</span>,<br>      ...<br>    ]<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;filtername&quot;</span>&gt;</span>Find your hero:<span class="tag">&lt;/<span class="name">label</span>&gt;</span> <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;findName&quot;</span> <span class="attr">id</span>=<span class="string">&quot;filtername&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    findName: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    names: [</span><br><span class="line">      <span class="string">&#x27;Evan You&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;John Lindquist&#x27;</span>,</span><br><span class="line">      ...</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>接下来，我们创建一个计算属性，其会根据用户在文本输入框中键入的内容，来过滤掉只符合<code>findName</code>属性值相关的名称内容。这里可以看到我使用了正则表达式来弱化了大小写的敏感度，因为作为一个用户，多数情况下是不会键入符合大小写规则的内容。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript">computed: &#123;<br>  <span class="hljs-function"><span class="hljs-title">filteredNames</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">let</span> filter = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-built_in">this</span>.findName, <span class="hljs-string">&#x27;i&#x27;</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.names.filter(<span class="hljs-function"><span class="hljs-params">el</span> =&gt;</span> el.match(filter))<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">filteredNames</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> filter = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="built_in">this</span>.findName, <span class="string">&#x27;i&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.names.filter(<span class="function"><span class="params">el</span> =&gt;</span> el.match(filter))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>随后我们更新页面模板中的输出项，将：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;name in names&quot;</span>&gt;</span>&#123;&#123; name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;name in names&quot;</span>&gt;</span>&#123;&#123; name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>调整为：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;name in filteredNames&quot;</span>&gt;</span>&#123;&#123; name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;name in filteredNames&quot;</span>&gt;</span>&#123;&#123; name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>可以看到，我们每次键入任何的信息，都会展示过滤后的内容。可见我们只须键入几行代码，而不须引用其它的类库，就能顺利的实现功能需求。</p>
 <p>我不会告诉你，这帮我省下了多少事件。如果你在使用 Vue，而未<a target="_blank" rel="noopener" href="https://vuejs.org/v2/guide/computed.html#Computed-Properties">合理的使用计算属性</a> ，赶紧来试试，定让你开心的飞起来。</p>
 <h1 id="Watchers"><a href="#Watchers" class="headerlink" title="Watchers"></a>Watchers</h1><p>Vue 有着很好的抽象体系设计，不过基本上每个编程人员在使用抽象类时，都会有遇到绕不过的坎而不爽。但也正式基于此痛点，Vue 提供给我们在响应体系中更深度的操作能力，以便我们通过设置钩子来观察任何数据的改变。讲真，这实在太有用了，因为作为一个应用的开发者，大多数时候我们是对数据的变化而响应相关操作的。</p>
 <p>Watchers(侦听器) 允许我们编写更多声明式代码。以简化我们自己编写的代码量。Vue 已在底层实现了此功能，因此我们能在 <code>data</code>，<code>computed</code> 或 <code>props</code> 中跟踪任何数值的改变，来举个例。</p>
 <p>Watchers(侦听器) 在监测属性值改变时，执行特定的业务逻辑代码非常好用(我第一次是从 <a target="_blank" rel="noopener" href="https://twitter.com/chrisvfritz">Chris Fritz</a> 听到这种操作方式的，但是他说他也是从别处体验到的 ☺️)。多数情况下，通过检测属性的改变来执行业务逻辑，这也正是 与 计算属性不同的地方。</p>
 <p>现在来跑一个简单的例子，感受下 watch 的效果</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">v-model.number</span>=<span class="hljs-string">&quot;counter&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">new</span> Vue(&#123;<br>	el: <span class="hljs-string">&quot;#app&quot;</span>,<br>	<span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> &#123;<br>		<span class="hljs-keyword">return</span> &#123;<br>			counter: <span class="hljs-number">0</span>,<br>		&#125;;<br>	&#125;,<br>	watch: &#123;<br>		<span class="hljs-function"><span class="hljs-title">counter</span>(<span class="hljs-params"></span>)</span> &#123;<br>			<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The counter has changed!&quot;</span>);<br>		&#125;,<br>	&#125;,<br>&#125;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;number&quot;</span> <span class="attr">v-model.number</span>=<span class="string">&quot;counter&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">	<span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			counter: <span class="number">0</span>,</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;,</span><br><span class="line">	watch: &#123;</span><br><span class="line">		<span class="function"><span class="title">counter</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">&quot;The counter has changed!&quot;</span>);</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>如上面代码所示，我们在<code>data</code>中设置了<code>counter</code>，并将此属性名称作为方法名称，在<code>watch</code>中配置<code>counter</code>，以便我们能监测设置的<code>counter</code>属性值，最后我们可以看到，一旦<code>counter</code>数值发生改变，控制台都有输出。</p>
 <h1 id="Transitioning-State-With-Watchers"><a href="#Transitioning-State-With-Watchers" class="headerlink" title="Transitioning State With Watchers"></a>Transitioning State With Watchers</h1><p>如果监测的状态标识符很简单，那么可以使用 watch(侦听器)来实现一个根据状态值改变的过度效果。以下是一个使用 Vue 来完成的柱状图表。随着数值的变化，watch(侦听器)将通过过度效果来更新图表。</p>
 <p>SVG 如下面的例子一样很好使用，因为其以 数据 来构建。</p>
 <p><a target="_blank" rel="noopener" href="//codepen.io/sdras/embed/OWZRZL?height=578&theme-id=1&slug-hash=OWZRZL&default-tab=result&user=sdras&embed-version=2&pen-title=Chart%20made%20with%20Vue,%20Transitioning%20State">点击查看 DEMO</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs javascript">watch: &#123;<br>  selected: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newValue, oldValue</span>) </span>&#123;<br><br>    <span class="hljs-keyword">var</span> tweenedData = &#123;&#125;<br><br>    <span class="hljs-keyword">var</span> update = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">let</span> obj = <span class="hljs-built_in">Object</span>.values(tweenedData);<br>      obj.pop();<br>      <span class="hljs-built_in">this</span>.targetVal = obj;<br>    &#125;<br><br>    <span class="hljs-keyword">var</span> tweenSourceData = &#123; <span class="hljs-attr">onUpdate</span>: update, <span class="hljs-attr">onUpdateScope</span>: <span class="hljs-built_in">this</span> &#125;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; oldValue.length; i++) &#123;<br>      <span class="hljs-keyword">let</span> key = i.toString()<br>      tweenedData[key] = oldValue[i]<br>      tweenSourceData[key] = newValue[i]<br>    &#125;<br><br>    TweenMax.to(tweenedData, <span class="hljs-number">1</span>, tweenSourceData)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  selected: <span class="function"><span class="keyword">function</span>(<span class="params">newValue, oldValue</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> tweenedData = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> update = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> obj = <span class="built_in">Object</span>.values(tweenedData);</span><br><span class="line">      obj.pop();</span><br><span class="line">      <span class="built_in">this</span>.targetVal = obj;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> tweenSourceData = &#123; <span class="attr">onUpdate</span>: update, <span class="attr">onUpdateScope</span>: <span class="built_in">this</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; oldValue.length; i++) &#123;</span><br><span class="line">      <span class="keyword">let</span> key = i.toString()</span><br><span class="line">      tweenedData[key] = oldValue[i]</span><br><span class="line">      tweenSourceData[key] = newValue[i]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    TweenMax.to(tweenedData, <span class="number">1</span>, tweenSourceData)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这里干了些啥呢？</p>
 <ul>
 <li>首先我们创建了一个对象，其会通过动画库来更新。</li>
@@ -310,281 +217,9 @@
 <p>我们也能在侦听器中使用动画来实现一个时差刻度盘。因为我时不时的会外出溜达，并且我的小伙伴也分散在不同的地方，所以需求之一就是能保证一个我们各自的当地时间都能在线，并且体现出是白天还是夜晚。</p>
 <p><a target="_blank" rel="noopener" href="//codepen.io/sdras/embed/RZGqxR?height=700&theme-id=1&slug-hash=RZGqxR&default-tab=result&user=sdras&embed-version=2&pen-title=Vue%20Time%20Comparison">点击查看 DEMO</a></p>
 <p>这里我们监听 选中的属性值，根据当前时间去触发不同的方法来改变 各个区域时间，其会通过色调，饱和度，和其它过度效果来展现。在之前的实现方式中，我们是通过下拉事件，而现在是在侦听器的方法中了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs javascript">watch: &#123;<br>  <span class="hljs-function"><span class="hljs-title">checked</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">let</span> period = <span class="hljs-built_in">this</span>.timeVal.slice(-<span class="hljs-number">2</span>),<br>      hr = <span class="hljs-built_in">this</span>.timeVal.slice(<span class="hljs-number">0</span>, <span class="hljs-built_in">this</span>.timeVal.indexOf(<span class="hljs-string">&#x27;:&#x27;</span>));<br><br>    <span class="hljs-keyword">const</span> dayhr = <span class="hljs-number">12</span>,<br>      rpos = <span class="hljs-number">115</span>,<br>      rneg = -<span class="hljs-number">118</span>;<br><br>    <span class="hljs-keyword">if</span> ((period === <span class="hljs-string">&#x27;AM&#x27;</span> &amp;&amp; hr != <span class="hljs-number">12</span>) || (period === <span class="hljs-string">&#x27;PM&#x27;</span> &amp;&amp; hr == <span class="hljs-number">12</span>)) &#123;<br>      <span class="hljs-built_in">this</span>.spin(<span class="hljs-string">`<span class="hljs-subst">$&#123;rneg - (rneg / dayhr) * hr&#125;</span>`</span>)<br>      <span class="hljs-built_in">this</span>.animTime(<span class="hljs-number">1</span> - hr / dayhr, period)<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-built_in">this</span>.spin(<span class="hljs-string">`<span class="hljs-subst">$&#123;(rpos / dayhr) * hr&#125;</span>`</span>)<br>      <span class="hljs-built_in">this</span>.animTime(hr / dayhr, period)<br>    &#125;<br><br>  &#125;<br>&#125;,<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  <span class="function"><span class="title">checked</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> period = <span class="built_in">this</span>.timeVal.slice(-<span class="number">2</span>),</span><br><span class="line">      hr = <span class="built_in">this</span>.timeVal.slice(<span class="number">0</span>, <span class="built_in">this</span>.timeVal.indexOf(<span class="string">&#x27;:&#x27;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> dayhr = <span class="number">12</span>,</span><br><span class="line">      rpos = <span class="number">115</span>,</span><br><span class="line">      rneg = -<span class="number">118</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ((period === <span class="string">&#x27;AM&#x27;</span> &amp;&amp; hr != <span class="number">12</span>) || (period === <span class="string">&#x27;PM&#x27;</span> &amp;&amp; hr == <span class="number">12</span>)) &#123;</span><br><span class="line">      <span class="built_in">this</span>.spin(<span class="string">`<span class="subst">$&#123;rneg - (rneg / dayhr) * hr&#125;</span>`</span>)</span><br><span class="line">      <span class="built_in">this</span>.animTime(<span class="number">1</span> - hr / dayhr, period)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.spin(<span class="string">`<span class="subst">$&#123;(rpos / dayhr) * hr&#125;</span>`</span>)</span><br><span class="line">      <span class="built_in">this</span>.animTime(hr / dayhr, period)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
 <p>关于 watchers(侦听器)还有很多其它有趣的使用方式，比如：</p>
 <p>从输入，到异步更新，再到动画，watchers(侦听器)在更新方面能做的事实在是太多了。如果你对 Vue 是如何处理响应工作感到好奇， <a target="_blank" rel="noopener" href="https://vuejs.org/v2/guide/reactivity.html">这部分指南</a>会十分有帮助。如果你想更加全面的了解 响应，我十分推荐  <a target="_blank" rel="noopener" href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754">Andre Staltz’ post</a> 和 Mike Bostock’s <a target="_blank" rel="noopener" href="https://medium.com/@mbostock/a-better-way-to-code-2b1d2876a3a0">A Better Way to Code</a>的响应章节部分。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>希望通过以上各部分的讲解，有助于我们正确的使用三者，以及更有效的使用 Vue 来加速开发我们的应用。有报告指出，我们花费 70%的时间阅读代码，30%的时间编写代码，作为个人而言，身为维护者的我，喜欢这种感觉，通过查看代码库，开启了我之前从未了解过的编写方法，并且马上了解作者在<code>methods</code>，<code>computed</code>，<code>watchers</code>的区别用意。</p>
-
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/blog/categories/%E8%AF%91%E6%96%87/">译文</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/blog/tags/vue/">vue</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/blog/2018/06/07/JS-%E7%BD%91%E4%BC%A0%E9%97%AE%E9%A2%98%E5%9B%9E%E9%A1%BE/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JS-网传问题回顾</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/blog/2018/04/27/JS-Array-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
-                        <span class="hidden-mobile">JS-Array-常用方法</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments">
-                
-                
-  <script type="text/javascript">
-    Fluid.utils.waitElementVisible('comments', function() {
-      var light = 'github-light';
-      var dark = 'github-dark';
-      var schema = document.documentElement.getAttribute('data-user-color-scheme');
-      if (schema === 'dark') {
-        schema = dark;
-      } else {
-        schema = light;
-      }
-      window.UtterancesThemeLight = light;
-      window.UtterancesThemeDark = dark;
-      var s = document.createElement('script');
-      s.setAttribute('src', 'https://utteranc.es/client.js');
-      s.setAttribute('repo', 'tangme/commit-utterances');
-      s.setAttribute('issue-term', 'title');
-      
-      s.setAttribute('label', 'utterances');
-      
-      s.setAttribute('theme', schema);
-      s.setAttribute('crossorigin', 'anonymous');
-      document.getElementById('comments').appendChild(s);
-    })
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-              </article>
-            
-          </article>
-        </div>
-      </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-    
-
-    
-      <a id="scroll-top-button" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-
-    
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/blog/js/duration.js"></script> </div> 
-  </div>
-  
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
-  
-
-  
-</footer>
-
-<!-- SCRIPTS -->
-
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/blog/js/debouncer.js" ></script>
-<script  src="/blog/js/events.js" ></script>
-<script  src="/blog/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  
-    <script  src="/blog/js/lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
-
-  <script  src="/blog/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/blog/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/blog/js/boot.js" ></script>
-
-
-
-</body>
-</html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">tanglv</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://tangme.github.io/2018/06/04/VUE%E4%B8%AD%E7%9A%84-methods-computed-watch/">https://tangme.github.io/2018/06/04/VUE%E4%B8%AD%E7%9A%84-methods-computed-watch/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://tangme.github.io" target="_blank">唐小律的发呆空间</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/vue/">vue</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2018/06/07/JS-%E7%BD%91%E4%BC%A0%E9%97%AE%E9%A2%98%E5%9B%9E%E9%A1%BE/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/blog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JS-网传问题回顾</div></div></a></div><div class="next-post pull-right"><a href="/blog/2018/04/27/JS-Array-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/blog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JS-Array-常用方法</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">tanglv</div><div class="author-info__description">something like.</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Methods"><span class="toc-number">1.</span> <span class="toc-text">Methods</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Computed"><span class="toc-number">2.</span> <span class="toc-text">Computed</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Watchers"><span class="toc-number">3.</span> <span class="toc-text">Watchers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Transitioning-State-With-Watchers"><span class="toc-number">4.</span> <span class="toc-text">Transitioning State With Watchers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/05/08/Linux%E5%B8%B8%E8%AF%86%E6%89%AB%E7%9B%B2/" title="Linux常识扫盲"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="Linux常识扫盲"/></a><div class="content"><a class="title" href="/blog/2021/05/08/Linux%E5%B8%B8%E8%AF%86%E6%89%AB%E7%9B%B2/" title="Linux常识扫盲">Linux常识扫盲</a><time datetime="2021-05-08T02:42:44.000Z" title="发表于 2021-05-08 10:42:44">2021-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/04/22/%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/" title="每日总结"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="每日总结"/></a><div class="content"><a class="title" href="/blog/2021/04/22/%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/" title="每日总结">每日总结</a><time datetime="2021-04-22T07:53:20.000Z" title="发表于 2021-04-22 15:53:20">2021-04-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/04/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WSL/" title="如何使用WSL"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="如何使用WSL"/></a><div class="content"><a class="title" href="/blog/2021/04/20/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8WSL/" title="如何使用WSL">如何使用WSL</a><time datetime="2021-04-20T07:46:45.000Z" title="发表于 2021-04-20 15:46:45">2021-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/04/06/%E4%B9%B0%E6%88%BF%E7%9B%B8%E5%85%B3/" title="买房相关"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="买房相关"/></a><div class="content"><a class="title" href="/blog/2021/04/06/%E4%B9%B0%E6%88%BF%E7%9B%B8%E5%85%B3/" title="买房相关">买房相关</a><time datetime="2021-04-06T06:35:25.000Z" title="发表于 2021-04-06 14:35:25">2021-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/03/25/Flex-%E5%B8%83%E5%B1%80/" title="Flex-布局"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="Flex-布局"/></a><div class="content"><a class="title" href="/blog/2021/03/25/Flex-%E5%B8%83%E5%B1%80/" title="Flex-布局">Flex-布局</a><time datetime="2021-03-25T07:29:13.000Z" title="发表于 2021-03-25 15:29:13">2021-03-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By tanglv</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><div class="js-pjax"></div><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label>✨ 网站已更新最新版本 👉</label> <a href="javascript:void(0)" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/blog/sw.js",{scope:"/blog/"})}));</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
