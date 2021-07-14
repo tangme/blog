@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>JS实用代码块</title>
+      <link href="/blog/2021/07/14/JS%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81%E5%9D%97/"/>
+      <url>/blog/2021/07/14/JS%E5%AE%9E%E7%94%A8%E4%BB%A3%E7%A0%81%E5%9D%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="处理从-Excel-中复制的数据"><a href="#处理从-Excel-中复制的数据" class="headerlink" title="处理从 Excel 中复制的数据"></a>处理从 Excel 中复制的数据</h1><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent">参考链接</a></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">&quot;paste&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> html = event.clipboardData.getData(<span class="string">&quot;text/html&quot;</span>); <span class="comment">// 获取 html格式内容</span></span><br><span class="line"><span class="keyword">var</span> $doc = <span class="keyword">new</span> DOMParser().parseFromString(html, <span class="string">&quot;text/html&quot;</span>); <span class="comment">//转为 html格式</span></span><br><span class="line"><span class="keyword">var</span> $trs = <span class="built_in">Array</span>.from($doc.querySelectorAll(<span class="string">&quot;table tr td&quot;</span>)); <span class="comment">// 筛选单元格</span></span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">$trs.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line"><span class="comment">// 取单元格文本值</span></span><br><span class="line"><span class="keyword">var</span> val = item.textContent.replace(<span class="string">&quot;\n&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">val = <span class="built_in">isNaN</span>(val) ? <span class="string">&quot;&quot;</span> : val;</span><br><span class="line">arr.push(val);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h1 id="hexo-支持-PWA"><a href="#hexo-支持-PWA" class="headerlink" title="hexo 支持 PWA"></a>hexo 支持 PWA</h1><p><a href="https://www.imgyh.com/posts/74ba30cc/">参考链接</a><br><a href="https://dev.to/njromano/how-to-scope-your-pwa-service-workers-1n6m">How to Scope Your Free Range PWA Service Workers</a></p><ul><li>找个支持 PWA 的主题，例如 <a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></li><li><a href="https://realfavicongenerator.net/">制作各平台的图标</a></li><li>添加 manifest.json</li><li>注入 service work</li></ul><h1 id="drop-生效条件"><a href="#drop-生效条件" class="headerlink" title="drop 生效条件"></a>drop 生效条件</h1><p>页面很多的地方是无效触发 drop 事件的，因此想要触发，在 <code>dragenter</code> <code>dragover</code> 时需要禁用默认行为</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">event.preventDefault();</span><br><span class="line"></span><br><span class="line">function doDragOver(event) &#123;</span><br><span class="line">  const isLink &#x3D; event.dataTransfer.types.includes(&quot;text&#x2F;uri-list&quot;);</span><br><span class="line">  if (isLink) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#droptargets">参考链接</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>编程相关概念</title>
       <link href="/blog/2021/07/13/%E7%BC%96%E7%A8%8B%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/"/>
       <url>/blog/2021/07/13/%E7%BC%96%E7%A8%8B%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</url>
