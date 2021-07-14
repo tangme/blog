@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>编程相关概念</title>
+      <link href="/blog/2021/07/13/%E7%BC%96%E7%A8%8B%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/"/>
+      <url>/blog/2021/07/13/%E7%BC%96%E7%A8%8B%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</url>
+      
+        <content type="html"><![CDATA[<h1 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h1><p>提供两把钥匙，即<strong>公钥</strong>和<strong>私钥</strong></p><ul><li>公钥提供给外界将内容加密</li><li>私钥将外界用公钥加密的内容还原</li></ul><p>例子：<br>公钥为: 91<br>私钥为: 11<br>内容为：123</p><p>加密的内容为：(公钥)91<em>123(内容) = 11193(加密内容)<br>加密内容优化：舍去前两位，防止倒推即：193(最终加密内容)<br>解密：(加密内容)193</em>11(私钥) = 2123(内容)<br>内容的后三位即原始内容：123</p><p>原理：<br>91 乘以 11 等于 1001，而任何一个三位数乘以 1001 后，末三位显然都不变（例如 123 乘以 1001 就等于 123123）</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux常识扫盲</title>
       <link href="/blog/2021/05/08/Linux%E5%B8%B8%E8%AF%86%E6%89%AB%E7%9B%B2/"/>
       <url>/blog/2021/05/08/Linux%E5%B8%B8%E8%AF%86%E6%89%AB%E7%9B%B2/</url>
