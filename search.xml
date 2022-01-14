@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>TODO-WORK</title>
+      <link href="/blog/2022/01/10/TODO-WORK/"/>
+      <url>/blog/2022/01/10/TODO-WORK/</url>
+      
+        <content type="html"><![CDATA[<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ul><li><input disabled="" type="checkbox"> 数据解析文档</li></ul><h1 id="EYE"><a href="#EYE" class="headerlink" title="EYE"></a>EYE</h1><h2 id="2022-02"><a href="#2022-02" class="headerlink" title="2022-02"></a>2022-02</h2><ul><li><input disabled="" type="checkbox"> 套餐配置页面</li><li><input disabled="" type="checkbox"> 门店销售引入套餐功能</li></ul><h2 id="2022-01"><a href="#2022-01" class="headerlink" title="2022-01"></a>2022-01</h2><ul><li><input checked="" disabled="" type="checkbox"> 门店销售打折抹零</li><li><input checked="" disabled="" type="checkbox"> 门店销售根据业务条件结款弹出会员来源</li><li><input checked="" disabled="" type="checkbox"> 门店销售页面镜片清空按钮优化</li><li><input checked="" disabled="" type="checkbox"> 移动医护界面优化</li><li><input checked="" disabled="" type="checkbox"> 排队叫号 client 界面调整优化</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>nginx</title>
       <link href="/blog/2021/10/27/nginx/"/>
       <url>/blog/2021/10/27/nginx/</url>
